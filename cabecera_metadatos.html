@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cabecera y metadatos</title>
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="description" content="Repaso básico a las etiquetas de cabecera y metadatos que se engloban dentro del head de una pagina web.">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon.png">
+  <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+    <h1>Etiquetas de cabecera y metadatos</h1>
+    <p><em><a href="index.html">Inicio</a></em></p>
+    <hr/>
+    <p>
+        En este apartado desglosaremos la siguiente estructura, desde <code>DOCTYPE html</code> hasta algunas de las
+        etiquetas más importantes que engloba el <em>HEAD</em> de nuestra página y será información relevante para 
+        nuestro navegador:
+    </p>
+    <pre>
+        &lt;!DOCTYPE html&gt;
+        &lt;html lang="es"&gt;
+            &lt;head&gt;
+                &lt;title&gt;Título de mi web&lt;/title&gt;
+                &lt;meta name="description" content="Descripción de mi web"&gt;
+                &lt;meta name="keywords" content="palabra1, palabra2, palabra3"&gt;
+                &lt;meta charset="UTF-8"&gt;
+                &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+                &lt;meta name="author" content="Nombre del autor"&gt;
+                &lt;link rel="icon" href="/icon.svg" type="image/svg+xml"&gt;
+                &lt;meta name="theme-color" content="#fafafa"&gt;
+            &lt;/head&gt;
+            ------------EL BODY LO VEREMOS MÁS ADELANTE----------------
+            &lt;body&gt;
+            &lt;/body&gt;
+        &lt;/html&gt;
+    </pre>
+    <h2>&lt;!DOCTYPE html&gt;</h2>
+    <p>
+        Define que el tipo de documento es <strong>HTML5</strong>. Debe ir en la primera linea del documento. Es obligatoria aunque si no 
+        se establece se verá correctamente pero el navegador entrará en modo no estándar y es posible que no se carguen correctamente 
+        algunas de las APIs de HTML5.
+    </p>
+    <h2>&lt;html lang="es"&gt;</h2>
+    <p>
+        Esta es la etiqueta de apertura del documento. Simplemente detallar que es conveniente detallar la lengua en la que está redactado 
+        el contenido del documento, en este caso en español ("es").
+    </p>
+    <p>A continuación desglosaremos el contenido de <strong>HEAD</strong></p>
+    <h2>title</h2>
+    <p>
+        Define el título que aparecerá en la pestaña del navegador. Su función más importante es que será el texto por el que será indexada nuestra página 
+        en todos los índices (google, bing...). Es muy importante que cada página disponga de su título personalizado.
+    </p>
+    <h2>description</h2>
+    <p>
+        Define la descripción general de esa página en concreto. También aparecerá en los resultados de búsqueda donde se muestre nuestra página.
+    </p>
+    <h2>keywords</h2>
+    <p>
+        Anteriormente buscadores como google se fijaban en estas palabras clave para indexar nuestra página en su indice de resultados, 
+        hoy en día sirven para poco ya que usan otros métodos. Sólo antigüos buscadores.
+    </p>
+    <h2>charset</h2>
+    <p>
+        Define la tabla de codificación que debe usarse para mostrar el contenido textual. UTF-8 incluye la gran mayoría de caracteres de todos los 
+        idiomas humanos escritos (acentos, caracteres especiales, ...).
+    </p>
+    <h2>viewport</h2>
+    <p>
+        Da instrucciones al navegador sobre como controlar las dimensiones y la escala de la página dependiendo del ancho del dispositivo.
+    </p>
+    <h2>author</h2>
+    <p>
+        Se utiliza para indicar quen es el autor del documento.
+    </p>
+    <h2>icon - favicon</h2>
+    <p>
+        Es la etiqueta donde indicaremos el favicon de nuestra página (icono que aparece en la pestaña junto al title). Es posible 
+        tener varias versiones dependiendo de las diferentes plataformas.
+    </p>
+    <h2>theme-color</h2>
+    <p>
+        Se usará para algunos navegadores móviles que disponen de la funcionalidad de poner la cabecera del navegador de un color determinado. 
+        Ayudará a mejorar el branding de nuestras web en mobile.
+    </p>
+
+</body>
+</html>
