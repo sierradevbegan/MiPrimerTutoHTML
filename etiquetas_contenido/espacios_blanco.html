@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Espacios en blanco</title>
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="description" content="En este documento explicaremos y probaremos como HTML utiliza los espacios en blanco, 
+  saltos de linea y entidades de ciertos caracteres.">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon.png">
+  <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+    <h1>Espacios en blanco, saltos de linea y entidades</h1>
+    <hr>
+    <h2>¿A qué nos referimos?</h2>
+    <p>
+        HTML no procesa más de un espacio seguido y tampoco tiene en cuenta los saltos de linea en el texto. 
+        Son propiedades internas del lenguaje. Veremos como sortearlo:
+    </p>
+    <p>
+        <strong>&amp;nbsp;</strong> Creará uno o cuantos quieras espacios manuales, al ser una entidad no es tratado
+        como un espacio. Este es &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; un ejemplo. 
+        <code>Este es &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; un ejemplo.</code>
+    </p>
+    <p>
+        <strong>&lt;br/&gt;</strong> Salto de linea manual en cualquier bloque de texto, es una etiqueta vacía. Y esto <br/> un salto de linea.
+        <code>Y esto &lt;br/&gt; un salto de linea.</code>
+    </p>
+    <p>
+        <strong>&lt;wbr/&gt;</strong> Oportunidad de salto de linea para palabras muy largas. Controlaremos por dónde se va a partir la linea
+        cuando sea necesario. Ejemploooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
+        ooooooooooooooooooooooooooooooooooooooooooooooooooo<wbr/>ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
+        oooooooooooooooooooooooo de uso. 
+        <code>Ejemploooooooooooooooooooooooooooooooooooooooooooooooooooooo&lt;wbr/&gt;ooooooooooooooooooooo de uso.</code>
+    </p>
+    <p>
+        &lt;pre&gt; Bloque de código donde se respetan los espacios, nada recomendable salvo para mostrar código y que se guarden las identaciones.
+        Controlaremos por donde se partira la linea cuando sea necesario.
+    </p>
+    <pre>
+        &lt;pre&gt;
+            if(necesito_mostrar_codigo == true):
+                print("Uso &lt;pre&gt;")
+            else:
+                print("Nunca")
+        &lt;/pre&gt;
+    </pre>
+    <p>
+        Se recomienda <strong>no abusar</strong> de estas etiquetas ni entidades, recordemos separar la información de la presentación.
+    </p>
+
+    <hr>
+    <p><a href="../texto_html.html" target="_self">--- Volver ---</a></p>
+</body>
+
+</html>

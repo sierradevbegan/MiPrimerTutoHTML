@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Enlaces</title>
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="description" content="En este documento explicaremos y probaremos el uso de los enlaces en un documento HTML.">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon.png">
+  <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+    <h1>Enlaces &lt;a&gt;</h1>
+    <hr>
+    <h2>¿Qué son?</h2>
+    <p>
+        Es la etiqueta que hizo que HTML tuviese tanta repercusión. La utilizaremos para enlazar con otros documentos internos (locales), 
+        documentos externos (otras web p.ej) e incluso a otra sección de nuestro propio documento. Es una etiqueta de linea y posee 
+        atributos básicos y de eventos.
+    </p>
+    <h2>Atributos específicos de los enlaces.</h2>
+    <p>
+        <strong>href</strong> Es un atributo obligatorio y el valor será una URL. Se recomienda que no contenga espacios, ni caracteres tipo entidad, 
+        ni mezclar mayúsculas con minúsculas, es decir, han de ser lo más simples posibles para que puedan enlazar bien.
+    </p>
+    <p>
+        <strong>download</strong> Es un atributo que puede ir vacío o puede contener el nombre del fichero con el que se descargará el documento. 
+        Para que funcione es necesario que la página sea cargada mediante un servidor de páginas web y no abriéndolo localmente.
+    </p>
+    <p>
+        <strong>target</strong> Este atributo indicará donde quieres que se abra el enlace; con <em>_blank</em> se abrirá en una pestaña nueva y 
+        con <em>_self</em> se abrirá en la pestaña o iframe actual.
+    </p>
+    <p>
+        <strong>hreflang</strong> Informa del idioma en el que está escrito el documento al que se va a acceder. Los posibles valores estandar se pueden
+        ver en el ISO 639-1.
+    </p>
+    
+    <h2>¿Cómo se usan?</h2>
+    <p><code> &lt;a href="https://www.google.es/"&gt;Google&lt;/a&gt; </code> Enlace externo básico, sin target se abrirá en la misma pestaña.</p>
+    <p>
+        <code> &lt;a href="./mi_otro_documento/" target="_blank" hreflang="es"&gt;Documento 2 de mi web&lt;/a&gt; </code> Enlace interno que se cargará 
+        en una pestaña nueva y el documento está en español.
+    </p>
+    <p>
+        <code> &lt;a href="./mi_documento.pdf/" download&gt;Mi documento pdf&lt;/a&gt; </code> Enlace a un documento que se descargará en mi pc.
+    </p>
+    <p>
+        <code> &lt;a href="./mi_file.pdf/" download="mi_file.pdf" hreflang="en"&gt;Mi file pdf&lt;/a&gt; </code> Enlace a un documento que se descargará en mi pc 
+        y que está en inglés.
+    </p>
+    <hr>
+    <p><a href="../texto_html.html" target="_self">--- Volver ---</a></p>
+</body>
+
+</html>
