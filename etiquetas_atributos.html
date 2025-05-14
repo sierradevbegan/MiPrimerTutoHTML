@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Etiquetas y atributos</title>
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="description" content="Repaso básico de que son las etiquetas, que tipos de etiquetas existen, como se forman
+  y que atributos pueden contener.">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon.png">
+  <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+    <h1>Qué es una etiqueta y y los atributos</h1>
+    <hr/>
+    <h2>Etiquetas</h2>
+    <p>
+        La etiqueta es el elemento más importante de HTML. Nos servirán para marcar la información. 
+        A groso modo se pueden englobar en 2 grandes grupos, las que no serán visibles para los visitantes (etiquetas de cabecera),
+        y las que si mostrarán toda la información visual al usuario (etiquetas del body). Más adelante veremos que estos dos grupos 
+        se desglosarán en más subtipos de etiquetas.
+    </p>
+    <h3>Cómo se componen</h3>
+    <p>
+        <code>&lt;p class="greeting"&gt;Esta etiqueta es un párrafo con atributo!&lt;/p&gt;</code>
+    </p>
+    <p>
+        <em>class</em> - Nombre del atributo <br/>
+        <em>greeting</em> - Valor del atributo <br/>
+        <em>class="greeting"</em> - Atributo <br/>
+        <em>Esta etiqueta es un párrafo con atributo!</em> - Contenido de la etiqueta! <br/>
+        <em>&lt;p class="greeting"&gt;</em> - Etiqueta de apertura <br/>
+        <em>&lt;/p&gt;</em> - Etiqueta de cierre
+    </p>
+    <h3>Etiquetas vacías</h3>
+    <p>
+        Existen etiquetas vacías, es decir, no lleva una etiqueta de cierre pero aun asi debe cerrarse en ella misma, veamos:<br/>
+        <code>
+            &lt;img src="mi_imagen.jpg"/&gt; <br/>
+            &lt;br/&gt; <br/>
+            &lt;hr/&gt;
+        </code>
+    </p>
+    <h3>Etiquetas dentro de etiquetas</h3>
+    <p>
+        <code>&lt;p&gt;&lt;a href="url"&gt;Esto es un enlace!&lt;/a&gt;&lt;/p&gt;</code>
+    </p>
+    <p>
+        Las etiquetas deben cerrarse de acuerdo a como se abren, se deben escribir siempre en minúsculas (también los atributos) y es
+        muy importante cerrarlas todas, aunque sean etiquetas vacías. <br/>
+        <code>&lt;p&gt;&lt;strong&gt;Contenido&lt;/strong&gt;&lt;/p&gt;</code>
+    </p>
+    <h3>Atributos</h3>
+    <p>
+        Los atributos proveen de información a la etiqueta y sus valores deben ir siempre entre commillas dobles. 
+        Una etiqueta puede llevar o no llevar atributo pero no quita que en algunos (como los enlaces) sea obligatorio, pero puede llevar 
+        tantos como necesite siempre que sean válidos.<br/>
+        Existen varios tipos de atributos; comunes, específicos de la etiqueta, obligatorios, opcionales...
+    </p>
+    <p>
+        - Atributos básicos: <em>id, class, style, title...</em><br/>
+        - Atributos de internacionalización: <em>lang="cod_idioma", xml:lang="cod", ...</em><br/>
+        - Atributos de evento: <em>onblur, onchange, onclick, onfocus, ...</em><br/>
+        - Atributos de foco: <em>acceskey, tabindex, ...</em>
+    </p>
+    <p>
+        También existen atributos vacíos, sin valor:<br/>
+        <code>&lt;input type="text" name="nombre" <strong>required</strong>&gt;</code><br/>
+        <em>required</em> es un atributo vacío.
+    </p>
+
+    <hr/>
+    <p><em><a href="index.html">Inicio</a></em></p>
+</body>
+</html>
