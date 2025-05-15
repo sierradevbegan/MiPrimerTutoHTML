@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Etiquetas semánticas</title>
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="description" content="En este documento probaremos el uso de las etiquetas semanticas de estructura y de contenido en un documento HTML.">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon.png">
+  <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <p><em><a href="./index.html">Inicio</a> -- Mis primeros pasos en HTML --</em></p>
+        </nav>
+        <hr>
+    </header>
+    <main>
+        <h1>Etiquetas Semánticas</h1>
+        <section>
+            <h2>Contenido de este documento</h2>
+            <ul>
+                <li>Etiquetas semánticas de estructura</li>
+                <li>Header, Footer y Main</li>
+                <li>Nav, Section y Aside</li>
+                <li>Etiquetas semánticas de texto: strong, em, time y address</li>
+                <li>Etiquetas no recomendadas: i, b, u, small</li>
+                <li>Ejemplo código fuente con estructura semántica</li>
+            </ul>
+        </section>
+        <section>
+            <h2>¿Qué son las etiquetas semánticas de estructura?</h2>
+            <p>
+                Son etiquetas (la mayoria de bloque) para agrupar y dividir los contenidos de nuestra página web y darle un nivel semántico a la estructura, 
+                tanto para el usuario, como para el SEO (motores de búsqueda como google) y tmbien para facilitar la accesibilidad (que sea accesible
+                para cualquier navegador o usuario incluso si padece algún tipo de discapacidad).
+            </p>
+        </section>
+        <section>
+            <h3>&lt;article&gt;&lt;/article&gt;</h3>
+            <p>
+                Es una de las etiquetas semánticas de sección más importantes de HTML5. Sirve para definir partes con la suficiente importancia como para 
+                cosiderarse una entidad destacable con información a su alrededor.<br/>
+                Por ejemplo una web de móviles o cualquier producto, cada uno de ellos será un <em>article</em> porque tiene un nombre, una imágen, una 
+                descripción, un precio... es decir, todo el producto en sí tiene significado por si mismo.
+            </p>
+        </section>
+        <section>
+            <h3>&lt;nav&gt;&lt;/nav&gt;</h3>
+            <p>
+                Etiqueta que va a agrupar los menús de navegación de nuestra página web. Dentro del nav podrá haber una sucesión de etiquetas (como enlaces...) 
+                y esta a su vez es posible verla dentro de otras etiquetas de sección como el header, el footer,...<br/>
+                Ayudará sobretodo a los navegadores sin interfaz gráfica a no perderse por la web. Es común ver más de un elemento nav dentro de una misma página.
+            </p>
+        </section>
+        <section>
+            <h3>&lt;header&gt;&lt;/header&gt;</h3>
+            <p>
+                Etiqueta de bloque que encerrará a la zona común de la parte superior de nuestra web. Normalmente estará el logotipo, el nombre de la web, el menú de 
+                navegación... que se repetirá en todos los documentos de la página. Es posible encontrar dentro de un section o un article una etiqueta header.
+            </p>
+        </section>
+        <section>
+            <h3>&lt;footer&gt;&lt;/footer&gt;</h3>
+            <p>
+                Etiqueta que encerrará la zona común de la parte inferior de nuestra web. Podrá estar compuesto por un menú inferior, páginas legales, copyright... y 
+                demás componentes que se repiten en la parte inferior de todos los documentos de nuestra web.
+            </p>
+        </section>
+        <section>
+            <h3>&lt;section&gt;&lt;/section&gt;</h3>
+            <p>
+                Nos permite agrupar una sección de nuestro documento web. Para identificar que puede ser un section piensa por ejemplo en algún elemento de tu web 
+                al que le puedas poner un título. Por ejemplo, cada etiqueta de este documento es un section, cada una de las partes de una página web, cada 
+                capítulo de un documento, cada una de las pestañas o tabs de un cuadro de diálogo, cada sección numerada de un documento...
+            </p>
+        </section>
+        <section>
+            <h3>&lt;main&gt;&lt;/main&gt;</h3>
+            <p>
+                Va a ser la etiqueta que va a englobar el contenido principal de nuestra web. Normalmente estará entre el header y el footer. Suele ser
+                elemento hijo de body o div.
+            </p>
+        </section>
+        <section>
+            <h3>&lt;aside&gt;&lt;/aside&gt;</h3>
+            <p>
+                Es la contraposición del main, englobará el contenido que no es de relevancia para nuestra web, es secundario o no tiene relación directa con el 
+                tema principal del documento. Menús o sidebars, publicidad, enlaces relacionados...
+            </p>
+        </section>
+        <section>
+            <h2>¿Qué son las etiquetas semánticas de texto?</h2>
+            <p>
+                Son etiquetas que nos ayudan a dar relevancia a partes del texto, suelen ser etiquetas de linea y aportan una valor semántico a nuestros textos. 
+                Estas no tienen un significado gráfico ni visual, otra cosa es que los navegadores las renderizen de varias maneras (negrita, cursiva, ...), solo
+                se centran en el significado semántico. Por supuesto estas etiquetas también mejoran la accesibilidad y el SEO.
+            </p>
+            <p>Algunas de ellas como <strong>strong</strong> y <em>em</em> ya las hemos visto anteriormente <a href="./texto_html.html" target="_blank">Etiquetas de texto en HTML</a></p>
+        </section>
+        <section>
+            <h3>&lt;time&gt;&lt;/time&gt;</h3>
+            <p>
+                Es una etiqueta de linea y la vamos a usar para marcar texto que haga referencia a una fecha o una hora. Será importante para la accesibilidad.
+                Dispone de un atributo <em>datetime</em> en formato timestamp en formato string.<br/>
+                <code>&lt;p&gt;Abierto de &lt;time&gt;10:00&lt;/time&gt; a &lt;time&gt;21:00&lt;/time&gt; todos los días.&lt;/p&gt;</code><br/>
+                <code>&lt;p&gt;Tengo una cita el &lt;time datetime="2025-05-15 18:30"&gt;Casco Viejo&lt;/time&gt;&lt;/p&gt;</code>
+            </p>
+        </section>
+        <section>
+            <h3>&lt;address&gt;&lt;/address&gt;</h3>
+            <p>
+                Va a ser utilizada para encerrar las direcciones o las formas de contacto que mostraremos en nuestra web. Puede ser una URL, una dirección, 
+                un email... Aportará mucho a nivel de accesibilidad.
+            </p>
+        </section>
+        <p><cite>NOTA: Para más ampliacion puedes comprobar la documentación oficial en <a href="https://www.w3schools.com" target="_blank">w3schools</a></cite></p>
+        <section>
+            <h2>Etiquetas no recomendadas</h2>
+            <p>
+                Son etiquetas que se usaban en versiones antigüas de HTML, aunque aún funcionan, que renderizaban el texto pero que no aportaban ningún valor 
+                semántico al texto, solo visual.
+            </p>
+            <p>
+                <code>&lt;b&gt;</code> - Negrita (no valor semántico) <br/>
+                <code>&lt;i&gt;</code> - Itálic (no valor semántico) <br/>
+                <code>&lt;small&gt;</code> - Reduce el tamaño de la fuente (no valor semántico) <br/>
+                <code>&lt;u&gt;</code> - Negrita (no valor semántico) 
+            </p>
+            <p>
+                Ahora en HTML vamos a tratar de estructurar la información, más adelante ya daremos estilo a nuestras páginas.
+            </p>
+        </section>
+    </main>
+    <footer>
+        <hr/>
+        <nav>
+            <p><em><a href="./index.html">Inicio</a> -- Mis primeros pasos en HTML --</em></p>
+        </nav>
+    </footer>
+</body>
+
+</html>
