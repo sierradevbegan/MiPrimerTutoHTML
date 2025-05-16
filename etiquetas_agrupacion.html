@@ -63,7 +63,194 @@
         </section>
         <section>
             <h2>&lt;div&gt;&lt;/div&gt;</h2>
-            
+            <p>
+                Es una de las etiquetas más utilizadas aunque es de las etiquetas que "menos sirven", no tiene ninguna funcionalidad mas que hacer grupos de información. 
+                Ni aporta valor semántico ni el navegador la interpreta de ninguna manera visual. Tiene todos los atributos comunes y de eventos. Puede contener otras 
+                etiquetas e incluso texto.
+            </p>
+            <p><pre>
+                &lt;div class="noticia"&gt;
+                    &lt;h3&gt;Titulo noticia 4&lt;/h3&gt;
+                    &lt;p&gt;Descripción noticia&lt;/p&gt;
+                &lt;/div&gt;
+            </pre></p>
+            <p>
+                Esto puede ser un article en vez de un div. Las dos cosas son válidas pero semánticamente es más correcto un article. Un div puede tener varios div dentro.
+                El ejemplo anterior podría tener un div padre "noticias-container" y dentro 3 o 4 noticias, que el conjunto poddría ser un section. Debemos tener una lógica
+                entre agrupación y tener un orden semántico.<br/>
+                Abusar de los div puede causar una mala accesibilidad y funcione peor los SEO, el código ocuparía mucho más tamaño y tardar en cargarse y renderizarse.
+            </p>
+        </section>
+        <section>
+            <h2>&lt;span&gt;&lt;/span&gt;</h2>
+            <p>
+                Etiqueta muy conocida pero sirve de muy poco y se abusa mucho de ella. Tiene atributos comunes y de eventos. Sería como div pero de linea.
+                Selecciona el texto para luego poder darle estilo con css o interactividad con JS. No aporta ninguna semántica ni cambia el flujo natural del texto.<br/>
+                <pre>&lt;p&gt;Este &lt;strong&gt; párrafo &lt;/strong&gt; de texto tiene &lt;span&gt; algunos fragmentos de span.&lt;/span&gt; &lt;/p&gt;</pre>
+            </p>
+            <p>Es una etiqueta de linea y puede contener más etiquetas de linea.</p>
+        </section>
+        <section>
+            <h2>&lt;blockquote&gt;&lt;/blockquote&gt;</h2>
+            <p>
+                Ya vista, la repasaremos.<br/>
+                Se utiliza para indicar que el texto pertenece a otro sitio externo del cual se indica la fuente. Es una etiqueta de bloque y contiene atributos comunes
+                y de eventos.<br/>
+                Tiene un atributo específico <em>cite</em> de tipo URL para indicar el origen de la cita.
+            </p>
+        </section>
+        <section>
+            <h2>&lt;hr/&gt;</h2>
+            <p>
+                Inserta una linea horizontal y se utiliza para separar semánticamente bloques de contenido de otros bloques de contenido. Es un elemento de bloque. Cada 
+                navegador la pintará a su manera hasta que no le digamos lo contrario, se puede personalizar.
+            </p>
+        </section>
+        <section>
+            <h2>&lt;Listas ul, ol y dl&gt;</h2>
+            <p>
+                <strong>ul y ol</strong> Son elementos de bloque y se utilizan para organizar información en formato de listado. Disponen de etiquetas hijas <em>li</em>. 
+                Ambas funcionan de la misma manera, lo único que cambia es el orden. En una van a aparecer viñetas (unorderer list) y en otra números (orderer list).
+            </p>
+            <p>
+                <strong>UL</strong> (Unorderer list), se utiliza para listar una serie de elementos en los que no importa el orden.<br/>
+                <strong>OL</strong> (Orderer list), se utiliza para listar una serie de elementos en los que importa el orden.<br/>
+                <strong>LI</strong> (List item), Elemento de bloque. Es cada uno de los elementos que contiene la lista. Dependerá de su padre (ul u ol) 
+                que aparezca con una viñeta o un número.<br/>
+                <strong>DL</strong> (Description list), se utiliza para listar elementos y definirlos. Usada en diccionarios p.ej. No dispone de etiquetas hijas li, tiene 
+                las suyas propias.<br/>
+                - DT -- Término a definir<br/>
+                - DD -- Definición del término
+            </p>
+            <h3>Lista desordenada</h3>
+            <p>
+                <pre>
+                &lt;ul&gt;
+                    &lt;li&gt;Aceite&lt;/li&gt;
+                    &lt;li&gt;Huevos&lt;/li&gt;
+                    &lt;li&gt;Patatas&lt;/li&gt;
+                    &lt;li&gt;Sal&lt;/li&gt;
+                &lt;/ul&gt;
+                </pre>
+            </p>
+            <p>
+                <ul>
+                    <li>Aceite</li>
+                    <li>Huevos</li>
+                    <li>Patatas</li>
+                    <li>Sal</li>
+                </ul>
+            </p>
+            <h3>Lista ordenada</h3>
+            <p>
+                <pre>
+                &lt;ol&gt;
+                    &lt;li&gt;Freir patatas&lt;/li&gt;
+                    &lt;li&gt;Mezclar con los huevos&lt;/li&gt;
+                    &lt;li&gt;Freir todo&lt;/li&gt;
+                    &lt;li&gt;Comer la tortilla&lt;/li&gt;
+                &lt;/ol&gt;
+                </pre>
+            </p>
+            <p>
+                <ol>
+                    <li>Freir patatas</li>
+                    <li>Mezclar con los huevos</li>
+                    <li>Freir todo</li>
+                    <li>Comer la tortilla</li>
+                </ol>
+            </p>
+            <h3>Lista definición</h3>
+            <p>
+                <pre>
+                &lt;dl&gt;
+                    &lt;dt&gt;Sartén&lt;/dt&gt;
+                        &lt;dd&gt;Utensílio de cocina para freir la tortilla&lt;/dd&gt;
+                    &lt;dt&gt;Patatas&lt;/dt&gt;
+                        &lt;dd&gt;Que estén buenas y sean del año&lt;/dd&gt;
+                &lt;/dl&gt;
+                </pre>
+            </p>
+            <p>
+                <dl>
+                    <dt>Sartén</dt>
+                        <dd>Utensílio de cocina para freir la tortilla</dd>
+                    <dt>Patatas</dt>
+                        <dd>Que estén buenas y sean del año</dd>
+                </dl>
+            </p>
+            <h3>Listas anidadas</h3>
+            <p>
+                Una lista puede tener listas anidadas, siempre dentro de un li. Debemos tener especial cuidado a la hora de abrir 
+                y cerrar las etiquetas.<br/>
+                Se pueden mezclar listas desordenadas con ordenadas y viceversa.
+            </p>
+            <p>
+                <pre>
+                &lt;ul&gt;
+                    &lt;li&gt;Ejemplo 1&lt;/li&gt;
+                    &lt;li&gt;Ejemplo 2
+                        &lt;ul&gt;
+                            &lt;li&gt;Ejemplo 2.1&lt;/li&gt;
+                            &lt;li&gt;Ejemplo 2.2&lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/li&gt;
+                    &lt;li&gt;Ejemplo 3&lt;/li&gt;
+                    &lt;li&gt;Ejemplo 4
+                        &lt;ol&gt;
+                            &lt;li&gt;Ejemplo 4.1&lt;/li&gt;
+                            &lt;li&gt;Ejemplo 4.2&lt;/li&gt;
+                            &lt;li&gt;Ejemplo 4.3&lt;/li&gt;
+                        &lt;/ol&gt;
+                    &lt;/li&gt;
+                    &lt;li&gt;Ejemplo 5&lt;/li&gt;
+                &lt;/ul&gt;    
+                </pre>
+                <ul>
+                    <li>Ejemplo 1</li>
+                    <li>Ejemplo 2
+                        <ul>
+                            <li>Ejemplo 2.1</li>
+                            <li>Ejemplo 2.2</li>
+                        </ul>
+                    </li>
+                    <li>Ejemplo 3</li>
+                    <li>Ejemplo 4
+                        <ol>
+                            <li>Ejemplo 4.1</li>
+                            <li>Ejemplo 4.2</li>
+                            <li>Ejemplo 4.3</li>
+                        </ol>
+                    </li>
+                    <li>Ejemplo 5</li>
+                </ul>
+            </p>
+        </section>
+        <section>
+            <h2>Figure y figcaption</h2>
+            <p>
+                Es una etiqueta de agrupación para imágenes o elementos media como un vídeo. Normalmente lo vamos a encontrar con ina etiqueta <em>img</em> 
+                en su interior. Va a servir para que tenga una semántica mucho mayor que solo una img por sí sola y a nivel estructural nos va a ayudar a 
+                manejarlo luego con CSS.<br/>
+                Dentro de la etiqueta <em>figure</em> vamos a tener 2 etiquetas: <br/>
+                - La etiqueta img que va a contener la imagen. <br/>
+                - La etiqueta <em>figcaption</em> que va a tener la descripción de dicha imagen (que es como el alt de img) pero a nivel semántico tiene
+                mayor valor , y a nivel visual el navegador lo va a renderizar como si fuese el pie de página de la imagen.
+            </p>
+            <p>
+                <pre>
+                &lt;figure&gt;
+                    &lt;img src="./img/imagen_ejemplo.jpg" alt="Escudo casco"&gt;
+                    &lt;figcaption&gt;Escudo Club Deportivo Casco Viejo&lt;/figcaption&gt;
+                &lt;/figure&gt;
+                </pre>
+            </p>
+            <p>
+                <figure>
+                    <img src="./img/imagen_ejemplo.jpg" alt="Escudo casco">
+                    <figcaption>Escudo Club Deportivo Casco Viejo</figcaption>
+                </figure>
+            </p>
         </section>
     </main>
 
