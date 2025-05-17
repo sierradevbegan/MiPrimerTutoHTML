@@ -37,10 +37,128 @@
             </li>
             <li>Tablas dentro de tablas</li>
         </ol>
-        <h2>Colspan</h2>
-        <p>
-            Va a ser un atributo de celda, es decir, será un atributo de th y td. Sirve para fusionar 2 o más celdas adyacentes por columnas.
-        </p>
+        <section>
+            <h2>Colspan</h2>
+            <p>
+                Va a ser un atributo de celda, es decir, será un atributo de th y td. Sirve para fusionar 2 o más celdas adyacentes por columnas.<br/>
+                Ejemplo sencillo de fusión por columnas:
+            </p>
+            <table border="1">
+                <caption>Tabla fusionada por columnas</caption>
+                <tr>
+                    <td colspan="2">A</td>
+                </tr>
+                <tr>
+                    <td>B</td>
+                    <td>C</td>
+                </tr>
+            </table>
+            <p>
+                Esto sería en su origen una tabla de 2 filas * 2 columnas. La primera celda de la primera fila está fusionada con la seguna celda de la primera fila.<br/>
+                Así quedaría el código:
+            </p>
+            <pre>
+            &lt;table border="1"&gt;
+                &lt;caption&gt;Tabla fusionada por columnas&lt;/caption&gt;
+                &lt;tr&gt;
+                    &lt;td colspan="2"&gt;A&lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;td&gt;B&lt;/td&gt;
+                    &lt;td&gt;C&lt;/td&gt;
+                &lt;/tr&gt;
+            &lt;/table&gt;
+            </pre>
+            <p>Ejemplo más avanzado</p>
+            <table border="1">
+                <caption>Fusion por columnas</caption>
+                <tr>
+                    <td colspan="3">A</td>
+                    <td>B</td>
+                </tr>
+                <tr>
+                    <td>C</td>
+                    <td colspan="2">D</td>
+                    <td>E</td>
+                </tr>
+                <tr>
+                    <td colspan="4">F</td>
+                </tr>
+                <tr>
+                    <td>G</td>
+                    <td>H</td>
+                    <td>I</td>
+                    <td>J</td>
+                </tr>
+            </table>
+        </section>
+        <section>
+            <h2>Rowspan</h2>
+            <p>
+                Va a ser un atributo de celda, es decir, será un atributo de th y td. Sirve para fusionar 2 o más celdas adyacentes por filas.<br/>
+                Ejemplo sencillo de fusión por filas:
+            </p>
+            <table border="1">
+                <caption>Tabla fusionada por filas</caption>
+                <tr>
+                    <td>A</td>
+                    <td rowspan="2">B</td>
+                </tr>
+                <tr>
+                    <td>C</td>
+                </tr>
+            </table>
+            <p>
+                Esto sería en su origen una tabla de 2 filas * 2 columnas. La segunda celda de la primera fila está fusionada con la segunda celda de la segunda fila.<br/>
+                Así quedaría el código:
+            </p>
+            <pre>
+            &lt;table border="1"&gt;
+                &lt;caption&gt;Tabla fusionada por filas&lt;/caption&gt;
+                &lt;tr&gt;
+                    &lt;td&gt;A&lt;/td&gt;
+                    &lt;td rowspan="2"&gt;B&lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;td&gt;C&lt;/td&gt;
+                &lt;/tr&gt;
+            &lt;/table&gt;
+            </pre>
+            <p>Ejemplo más avanzado</p>
+            <table border="1">
+                <caption>Fusion por filas</caption>
+                <tr>
+                    <td>A</td>
+                    <td>B</td>
+                    <td rowspan="3">C</td>
+                    <td>D</td>
+                </tr>
+                <tr>
+                    <td rowspan="2">E</td>
+                    <td>F</td>
+                    <td rowspan="3">G</td>
+                </tr>
+                <tr>
+                    <td>H</td>
+                </tr>
+                <tr>
+                    <td>I</td>
+                    <td>J</td>
+                    <td>K</td>
+                </tr>
+            </table>
+        </section>
+        <section>
+            <h2>Colspan + Rowspan</h2>
+            <p>
+                Sería conveniente seguir unos consejos para desarrollar cualquier tabla con celdas fusionadas:<br/>
+                - Contabilizar total de filas<br/>
+                - Contabilizar total de columnas<br/>
+                - Comprobar que la suma de los Td's + colspan dan el total de columnas por fila<br/>
+                - Comprobar que la suma de los Tr's + rowspan dan el total de filas por columna<br/>
+            </p>
+            
+        </section>
     </main>
 
     <footer>
