@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tablas sencillas</title>
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="description" content="En este documento probaremos el uso basico de las tablas para mostrar datos tabulados
+  y listados de información organizada en un documento HTML.">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon.png">
+  <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <p><em><a href="./index.html">Inicio</a> -- Mis primeros pasos en HTML --</em></p>
+        </nav>
+        <hr>
+    </header>
+
+    <main>
+        <h1>Tablas (Parte 1)</h1>
+        <ol>
+            <li>¿Qué son?</li>
+            <li>Table</li>
+            <li>Tr</li>
+            <li>Th</li>
+            <li>Td</li>
+            <li>Caption</li>
+            <li>Ejemplos</li>
+        </ol>
+        <section>
+        <h2>¿Qué son?</h2>
+            <p>
+                Las tablas están incluidas en HTML desde sus primeras versiones y son una buena forma de mostrar datos claramente. <br/>
+                Se utilizan para mostrar datos tabulados y listados de información organizada, y sólo para eso deben usarse. Una tabla puede ser 
+                compleja o sencilla dependiendo de nuestro objetivo y la cantidad de etiquetas o atributos a utilizar.
+            </p>
+        </section>
+        <section>
+            <h2>&lt;table&gt;&lt;/table&gt;</h2>
+            <p>
+                Englobará todo el contenido de la tabla, es una etiqueta de bloque y lleva atributos comunes y de eventos.<br/>
+                Tiene un atributo propio: <em>summary="texto"</em> que permite describir el contenido de la tabla para buscadores y accesibilidad.<br/>
+                También tiene un atributo border aunque es mejor hacerlo mediante CSS.
+            </p>
+        </section>
+        <section>
+            <h2>&lt;tr&gt;&lt;/tr&gt;</h2>
+            <p>
+                Modela una fila de la tabla en la que esté incluida, es decir, existirá un tr por cada fila de la tabla. Es una etiqueta de bloque.
+            </p>
+        </section>
+        <section>
+            <h2>&lt;th&gt;&lt;/th&gt;</h2>
+            <p>
+                Celda de cabecera de fila o de columna. Etiqueta de tipo nueva, ni es de linea ni es de bloque. Los navegadores suelen renderizar <br/>
+                su contenido en negrita aportando semántica a nuestra tabla
+            </p>
+        </section>
+        <section>
+            <h2>&lt;td&gt;&lt;/td&gt;</h2>
+            <p>
+                Celda común de tabla. Etiqueta de tipo nueva, ni es de linea ni es de bloque. Son las que contendrán los datos regulares de la tabla.<br/>
+                Atributos específicos de fusión de celdas; <em>colspan</em> para fusionar columnas y <em>rowspan</em> para fusionar filas.
+            </p>
+        </section>
+        <section>
+            <h2>&lt;caption&gt;&lt;/caption&gt;</h2>
+            <p>
+                La usaremos para indicar en textoel contenido de la tabla. Los navegadores accesibles lo usarán para dar una descripción de lo que pueden <br/>
+                encontrar en la tabla. El navegador lo renderizará a modo de título de la tabla.
+            </p>
+        </section>
+        <section>
+            <h2>Ejemplos</h2>
+            <p>
+                <em>Tabla sencilla de 3 filas y 3 columnas</em>
+            </p>
+            <table border="1">
+                <caption>Título de la Tabla</caption>
+                <tr>
+                    <th>Encabezado 1</th>
+                    <th>Encabezado 2</th>
+                    <th>Encabezado 3</th>
+                </tr>
+                <tr>
+                    <td>Celda 1</td>
+                    <td>Celda 2</td>
+                    <td>Celda 3</td>
+                </tr>
+                <tr>
+                    <td>Celda 4</td>
+                    <td>Celda 5</td>
+                    <td>Celda 6</td>
+                </tr>
+            </table>
+            <p>
+                <em>Código de la tabla anterior</em>
+            </p>
+            <pre>
+            &lt;table border="1"&gt;
+                &lt;caption&gt;Título de la Tabla&lt;/caption&gt;
+                &lt;tr&gt;
+                    &lt;th&gt;Encabezado 1&lt;/th&gt;
+                    &lt;th&gt;Encabezado 2&lt;/th&gt;
+                    &lt;th&gt;Encabezado 3&lt;/th&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;td&gt;Celda 1&lt;/td&gt;
+                    &lt;td&gt;Celda 2&lt;/td&gt;
+                    &lt;td&gt;Celda 3&lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;td&gt;Celda 4&lt;/td&gt;
+                    &lt;td&gt;Celda 5&lt;/td&gt;
+                    &lt;td&gt;Celda 6&lt;/td&gt;
+                &lt;/tr&gt;
+            &lt;/table&gt;
+            </pre>
+        </section>
+    </main>
+
+    <footer>
+        <hr/>
+        <nav>
+            <p><em><a href="./index.html">Inicio</a> -- Mis primeros pasos en HTML --</em></p>
+        </nav>
+    </footer>
+</body>
+
+</html>
