@@ -157,7 +157,189 @@
                 - Comprobar que la suma de los Td's + colspan dan el total de columnas por fila<br/>
                 - Comprobar que la suma de los Tr's + rowspan dan el total de filas por columna<br/>
             </p>
-            
+            <H3>Ejemplo de tabla con filas y columnas fusionadas</H3>
+            <table border="1">
+                <caption>FUSIÓN DE FILAS Y COLUMNAS</caption>
+                <tr>
+                    <th rowspan="2">AÑO</th>
+                    <th colspan="4">EXPANSIÓN DE VENTAS</th>
+                </tr>
+                <tr>
+                    <td>PRODUCTO A</td>
+                    <td>PRODUCTO B</td>
+                    <td>PRODUCTO C</td>
+                    <td>PRODUCTO D</td>
+                </tr>
+                <tr>
+                    <td>N - 3</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>N - 2</td>
+                    <td>3</td>
+                    <td>5</td>
+                    <td>8</td>
+                    <td>4</td>
+                </tr>
+                <tr>
+                    <td>N - 1</td>
+                    <td>4</td>
+                    <td>4</td>
+                    <td>7</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>N</td>
+                    <td>5</td>
+                    <td>7</td>
+                    <td>6</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td rowspan="2">AÑO</td>
+                    <td>PRODUCTO A</td>
+                    <td>PRODUCTO B</td>
+                    <td>PRODUCTO C</td>
+                    <td>PRODUCTO D</td>
+                </tr>
+                <tr>
+                    <td><th colspan="4">EXPANSIÓN DE VENTAS</th></td>
+                </tr>
+            </table>
+            <P><em>*Nota: se pueden dar mil tipos de tabla, hasta combinar en una misma celda colspan y rowspa.</em></P>
+        </section>
+        <section>
+            <h2>Tablas semánticas</h2>
+            <p>
+                Ayudan, al igual que las etiquetas semánticas, a añadir significado a los datos tabulados.<br/>
+                Dividiremos las tablas en tres partes:
+            </p>
+            <h3>&lt;thead&gt;&lt;/thead&gt;</h3>
+            <p>
+                Define donde empieza y donde termina la cebecera de la tabla. Contendrá los th.
+            </p>
+            <h3>&lt;tbody&gt;&lt;/tbody&gt;</h3>
+            <p>
+                Va a englobar todos los datos regulares de la tabla. Va después del thead aunque si tiene tfoot irá después del tfoot.
+            </p>
+            <h3>&lt;tfoot&gt;&lt;/tfoot&gt;</h3>
+            <p>
+                Las tablas pueden tener o no tener tfoot. En caso de tener irá siempre antes de tbody. Sirve para acumulados, sumas totales, 
+                contabilizaciones o repetir la cabecera.
+            </p>
+            <table border="">
+                <tr>
+                    <th>"thead"</th>
+                    <th>Materia</th>
+                    <th>Calificación</th>
+                </tr>
+                <tr>
+                    <td rowspan="3"><strong>"tbody"</strong></td>
+                    <td>Redes</td>
+                    <td>95</td>
+                </tr>
+                <tr>
+                    <td>IA</td>
+                    <td>98</td>
+                </tr>
+                <tr>
+                    <td>Compiladores</td>
+                    <td>70</td>
+                </tr>
+                <tr>
+                    <th>"tfoot"</th>
+                    <th>PROMEDIO</th>
+                    <th>87.6</th>
+                </tr>
+            </table>
+            <h3>Vamos a ver su código</h3>
+            <pre>
+                &lt;table border="1"&gt;
+                    &lt;thead&gt;
+                        &lt;tr&gt;
+                            &lt;th&gt;Materia&lt;/th&gt;
+                            &lt;th&gt;Calificación&lt;/th&gt;
+                        &lt;/tr&gt;
+                    &lt;/thead&gt;
+                    &lt;tbody&gt;
+                        &lt;tr&gt;
+                            &lt;td&gt;Redes&lt;/td&gt;
+                            &lt;td&gt;95&lt;/td&gt;
+                        &lt;/tr&gt;
+                        &lt;tr&gt;
+                            &lt;td&gt;IA&lt;/td&gt;
+                            &lt;td&gt;98&lt;/td&gt;
+                        &lt;/tr&gt;
+                        &lt;tr&gt;
+                            &lt;td&gt;Compiladores&lt;/td&gt;
+                            &lt;td&gt;70&lt;/td&gt;
+                        &lt;/tr&gt;
+                    &lt;/tbody&gt;
+                    &lt;tfoot&gt;
+                        &lt;tr&gt;
+                            &lt;th&gt;Promedio&lt;/th&gt;
+                            &lt;th&gt;87.6&lt;/th&gt;
+                        &lt;/tr&gt;
+                    &lt;/tfoot&gt;
+                &lt;/table&gt;
+            </pre>
+        </section>
+        <section>
+            <h2>Tablas dentro de tablas</h2>
+            <p>
+                A veces en tablas muy complejas es normal encontrar tablas dentro tablas.
+            </p>
+            <table border="1">
+                <tr>
+                    <td>Celda de la tabla 1</td>
+                    <td>Celda de la tabla 1</td>
+                    <td>
+                        <table border="1">
+                            <tr>
+                                <td>Celda de la tabla 2</td>
+                                <td>Celda de la tabla 2</td>
+                                <td>Celda de la tabla 2</td>
+                            </tr>
+                            <tr>
+                                <td>Celda de la tabla 2</td>
+                                <td>Celda de la tabla 2</td>
+                                <td>Celda de la tabla 2</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Celda de la tabla 1</td>
+                    <td>
+                        <table border="1">
+                            <td>Celda de la tabla 3</td>
+                            <td>Celda de la tabla 3</td>
+                            <td>Celda de la tabla 3</td>
+                            <td>Celda de la tabla 3</td>
+                        </table>
+                    </td>
+                    <td>Celda de la tabla 1</td>
+                </tr>
+                <tr>
+                    <td>Celda de la tabla 1</td>
+                    <td>
+                        <table border="1">
+                            <tr>
+                                <td>Celda de la tabla 4</td>
+                                <td>Celda de la tabla 4</td>
+                            </tr>
+                            <tr>
+                                <td>Celda de la tabla 4</td>
+                                <td>Celda de la tabla 4</td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td>Celda de la tabla 3</td>
+                </tr>
+            </table>
         </section>
     </main>
 
