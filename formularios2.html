@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Formularios - Parte 2</title>
-  <link rel="stylesheet" href="css/style.css">
+  <!--<link rel="stylesheet" href="css/style.css">-->
   <meta name="description" content="En este documento probaremos de formularios, inputs, label textarea, select, button, submit, fieldset en un documento HTML.">
   <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
   <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
@@ -36,6 +36,371 @@
 
     <main>
         <h1>Formularios (Parte2)</h1>
+        <p>
+            Contenido: 
+            <ul>
+                <li>Resto de inputs (type)</li>
+                <li>Label</li>
+                <li>Textarea</li>
+                <li>Select</li>
+                <li>Button vs Submit</li>
+                <li>Fieldset</li>
+                <li>Modificadores de validación y obligatoriedad</li>
+            </ul>
+        </p>
+        <section>
+            <h2>Resto de inputs</h2>
+            <p>
+                <em>checkbox, color, date, datetime-local, image, month, radio, range, reset, search, tel, time, week.</em>
+            </p>
+            <p>
+                Recordemos la importancia de los atributos <strong>name y value</strong>. Cuando mandamos los datos al servidor 
+                se van a enviar en parejas de 2. Estos son los campos que va a recibir el backend para poder ser tramitados.
+                Es importante que el formulario se vea bien en HTML pero estar seguros de que cada input tenga el name correspondiente.
+                El atributo name no debe contener caracteres especiales ni espacios... solo nombres en minúscula y si es necesario concatenarlos con un guión bajo.
+            </p>
+            <article>
+                <h3>Search</h3>
+                <p>
+                    Es un input de texto pero que va a tener una funcionalidad extra, el navegador va a renderizar una x a la derecha del campo 
+                    para burrar el contenido del input.<br/>
+                    <pre>
+                        &lt;input type="search" name="q" value="Buscar"&gt;
+                    </pre>
+                </p>
+                <p>
+                    <input type="search" name="q" value="Buscar">
+                </p>
+            </article>
+            <article>
+                <h3>Image</h3>
+                <p>
+                    No es mas que un input de tipo submit, es decir, un botón para enviar el formulario, pero que en lugar de un botón lo que va a renderizar es una 
+                    imagen que le asociemos.<br/>
+                    <pre>
+                        &lt;input type="image" src="imagen.gif" alt="boton" weight="12" height="12"&gt;
+                    </pre>
+                </p>
+                <p>
+                    <input type="image" src="imagen.gif" alt="boton" weight="12" height="12">
+                </p>
+            </article>
+            <article>
+                <h3>Color</h3>
+                <p>
+                    Se va a utilizar para seleccionar un color. Lo que va a salir es un colo-picker. No es más que un selector de color que renderiza el navegador o el SO. 
+                    Se puede selecionar RGB, hexadecimal...<br/>
+                    <pre>
+                        &lt;input type="color" name="color"&gt;
+                    </pre>
+                </p>
+                <p>
+                    <input type="color" name="color">
+                </p>
+            </article>
+            <article>
+                <h3>Date</h3>
+                <p>
+                    Con date podremos seleccionar una fecha del calendario que nos sale en ese input. Es un calendario nativo del SO. Valida que una fecha 
+                    sea correcta.<br/>
+                    <pre>
+                        &lt;input type="date" name="fecha_nacimiento"&gt;
+                    </pre>
+                </p>
+                <p>
+                    <input type="date" name="fecha_nacimiento">
+                </p>
+            </article>
+            <article>
+                <h3>Time</h3>
+                <p>
+                    Es un input que nos permite seleccionar una hora. Valida hora correcta<br/>
+                    <pre>
+                        &lt;input type="time" name="meeting_hour"&gt;
+                    </pre>
+                </p>
+                <p>
+                    <input type="time" name="meeting_hour">
+                </p>
+            </article>
+            <article>
+                <h3>Datetime-local</h3>
+                <p>
+                    Nos va a permitir introducir una fecha y una hora juntos. Valida que fecha y hora sean correctas.<br/>
+                    <pre>
+                        &lt;input type="datetime-local" name="fecha_hora"&gt;
+                    </pre>
+                </p>
+                <p>
+                    <input type="datetime-local" name="fecha_hora">
+                </p>
+            </article>
+            <article>
+                <h3>Month</h3>
+                <p>
+                    Nos permitirá seleccionar un més válido (de un año concreto).<br/>
+                    <pre>
+                        &lt;input type="month" name="mes"&gt;
+                    </pre>
+                </p>
+                <p>
+                    <input type="month" name="mes">
+                </p>
+            </article>
+            <article>
+                <h3>Week</h3>
+                <p>
+                    Selecciona un número de semana del año.<br/>
+                    <pre>
+                        &lt;input type="week" name="semana"&gt;
+                    </pre>
+                </p>
+                <p>
+                    <input type="week" name="semana">
+                </p>
+            </article>
+            <article>
+                <h3>Tel</h3>
+                <p>
+                    Nos permite almacenar un teléfono. Se le puede añadir un patron <em>pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"</em> por ejemplo, 
+                    para que valide que es un número de teléfono correcto,. Pero claro esto es complicado porque cada país tiene un patrón diferente..<br/>
+                    <pre>
+                        &lt;input type="tel" name="teléfono" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"&gt;
+                    </pre>
+                </p>
+                <p>
+                    <input type="tel" name="teléfono" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
+                </p>
+            </article>
+            <article>
+                <h3>Range</h3>
+                <p>
+                    Nos va a dar un deslizador para poder introducir un valor numérico. Lo normal es ponerle un mínimo y un máximo. Acepta el atributo <em>step</em> 
+                    para desplazarse de 2 en 2 o en decimales .5 o .1.<br/>
+                    Indique su experiencia en el parque de atracciones:
+                    <pre>
+                        &lt;input type="range" name="experience" min="0" max="10"&gt;
+                    </pre>
+                </p>
+                <p>
+                    Indique su experiencia en el parque de atracciones: 
+                    <input type="range" name="experience" min="0" max="10">
+                </p>
+            </article>
+            <article>
+                <h3>Checkbox</h3>
+                <p>
+                    Podremos seleccionar 0, 1 o varios valores de las opciones que haya. No son excluyentes. El name debe ser diferente.<br/>
+                    Ingredientes de la pizza: 
+                    <pre>
+                        &lt;input type="checkbox" name="tomate"&gt; Tomate
+                        &lt;input type="checkbox" name="queso"&gt; Queso
+                        &lt;input type="checkbox" name="jamon"&gt; Jamón
+                    </pre>
+                </p>
+                <p>
+                    Ingredientes de la pizza: <br/>
+                    <input type="checkbox" name="tomate"> Tomate<br/>
+                    <input type="checkbox" name="queso"> Queso<br/>
+                    <input type="checkbox" name="jamon"> Jamón
+                </p>
+            </article>
+            <article>
+                <h3>Radio</h3>
+                <p>
+                    Se enviará un único valor de entre las opciones disponibles. Son excluyentes. Por ejemplo el sexo o el color de 
+                    unas zapatillas que compras. En los radiobutton es necerasio usar el value, ya que el name será el mismo para todas las opciones.<br/>
+                    <pre>
+                        &lt;input type="radio" name="color" value="negro"&gt; Negro
+                        &lt;input type="radio" name="color" value="blanco"&gt; Blanco
+                    </pre>
+                </p>
+                <p>
+                    Color zapatillas <br/>
+                    <input type="radio" name="color" value="negro"> Negro<br/>
+                    <input type="radio" name="color" value="blanco"> Blanco
+                </p>
+            </article>
+            <p><strong>Hacerlas accesibles:</strong></p>
+            <p>
+                Lo normal es que cuando pinchamos en el texto de un checkbox o un radiobutton (o en el texto de cualquier otro input) se seleccione 
+                esa opción o campo correspondiente. Esto es ACCESIBILIDAD y se dá con la etiqueta <em>label</em>.
+            </p>
+        </section>
+        <section>
+            <article>
+                <h2>Etiqueta label</h2>
+                <p>
+                    Se usa para asociar una descripción o texto explicativo con un elemento del formulario mediante el atributo <em>for</em>, que debe 
+                    coincidir con el atributo <em>id</em> del control (input). Alternativamente puede anidar directamente el control dentro de la etiqueta label.
+                </p>
+                <pre>
+                    &lt;input type="radio" name="color" value="negro" id="black"&gt;
+                        &lt;label for="black"&gt;Negro azabache&lt;/label&gt;
+                    &lt;input type="radio" name="color" value="blanco" id="white"&gt;
+                        &lt;label for="white"&gt;Blanco perla&lt;/label&gt;
+                </pre>
+                <p>
+                    <input type="radio" name="color" value="negro" id="black">
+                    <label for="black">Negro azabache</label><br/>
+                    <input type="radio" name="color" value="blanco" id="white">
+                    <label for="white">Blanco perla</label>
+                </p>
+                <p>
+                    LABEL VS PLACEHOLDER VS TEXT SIMPLE <br/>
+                    Es más correcto tener un label para cada input. P ej si anulamos el texto y solo ponemos un placeholder una vez rellenos puede que no sepamos 
+                    que es cada campo y eso no es accesible. Aunque se ponga el placeholder, deberá llevar un texto en un label o como mínimo un texto simple.
+                </p>
+            </article>
+            <article>
+                <h2>Textarea</h2>
+                <p>
+                    Crea una caja de texto me múltiples líneas donde los usuarios pueden escribir texto más extenso. Normalmente no tendrá value.<br/>
+                    Atributos:<br/>
+                    <em>- rows</em> Altura visible del texto en lineas <br/>
+                    <em>- cols</em> Ancho visible del textaera en caracteres <br/>
+                    <em>- name, value, placeholder</em><br/>
+                    <em>- disabled</em> Deshabilita el area de texto para que el usuario no modifique <br/>
+                    <em>- readonly</em> Permite que el area sea visible pero no editable <br/>
+                    <em>- wrap</em> Controla como se manejan las lineas de texto largas en el area de texto (hard, soft, off).
+                </p>
+                <pre>
+                    &lt;label for="biograph"&gt;Resume tu biegrafía&lt;/label&gt;
+                        &lt;textarea id="biograph" name="bio" rows="4" cols="50"&gt;&lt;/textarea&gt;
+                </pre>
+                <p>
+                    <label for="biograph">Resume tu biografía</label><br/>
+                    <textarea id="biograph" name="bio" rows="4" cols="50"></textarea>
+                </p>
+            </article>
+            <article>
+                <h2>Select</h2>
+                <p>
+                    Define una lista desplegable que permite al usuario elegir una opción de una lista de opciones.
+                </p>
+                <pre>
+                    &lt;label for="size"&gt;Seleccione la talla&lt;/label&gt;
+                    &lt;select name="size" id="size"&gt;
+                        &lt;option value=""&gt;Elige&lt;/option&gt;
+                        &lt;option value="38"&gt;Talla 38&lt;/option&gt;
+                        &lt;option value="39"&gt;Talla 39&lt;/option&gt;
+                        &lt;option value="40"&gt;Talla 40&lt;/option&gt;
+                        &lt;option value="41"&gt;Talla 41&lt;/option&gt;
+                        &lt;option value="42"&gt;Talla 42&lt;/option&gt;
+                    &lt;/select&gt;
+                </pre>
+                <p>
+                    <label for="size">Seleccione la talla</label><br/>
+                    <!-- required para que se seleccione una opción obligatoriamente-->
+                    <select name="size" id="size" required>
+                        <!-- Por defecto aparecerá la primera opción de la lista seleccionada
+                         de modo que hacemos un option con el value vacio-->
+                        <option value="">Elige</option>
+                        <option value="38">Talla 38</option>
+                        <option value="39" selected>Talla 39</option><!-- Selected (opcional) marca una opción por defecto -->
+                        <option value="40">Talla 40</option>
+                        <option value="41">Talla 41</option>
+                        <option value="42">Talla 42</option>
+                    </select>
+                </p>
+                <p>
+                    ATRIBUTO MULTIPLE<br/>
+                    Existen desplegables que permiten seleccionar múltiples opciones.
+                </p>
+                <pre>
+                    &lt;label for="cars"&gt;Seleccione marca/s vehículo&lt;/label&gt;&lt;br/&gt;
+                    &lt;select name="cars" id="cars" multiple size="2"&gt;<!--size número de elementos que se visualizarán-->
+                        &lt;option value="volvo"&gt;Volvo&lt;/option&gt;
+                        &lt;option value="saab"&gt;Saab&lt;/option&gt;
+                        &lt;option value="opel"&gt;Opel&lt;/option&gt;
+                        &lt;option value="audi"&gt;Audi&lt;/option&gt;
+                        &lt;option value="bmw"&gt;BMW&lt;/option&gt;
+                    &lt;/select&gt;
+                </pre>
+                <p>
+                    <label for="cars">Seleccione marca/s vehículo</label><br/>
+                    <select name="cars" id="cars" multiple size="2"><!--size número de elementos que se visualizarán-->
+                        <option value="volvo">Volvo</option>
+                        <option value="saab">Saab</option>
+                        <option value="opel">Opel</option>
+                        <option value="audi">Audi</option>
+                        <option value="bmw">BMW</option>
+                    </select>
+                </p>
+            </article>
+            <article>
+                <h2>BOTTON VS SUBMIT</h2>
+                <p>
+                    Los 2 sirven para enviar el formulario. Es preferible usar button, mas que nada porque los input de tipo submit 
+                    tienen estilos heredados de los formularios que a veces suelen entrar en conflicto con nuestros estilos css mientras 
+                    que button a la hora de darle estilo se comportará mejor.
+                </p>
+            </article>
+            <article>
+                <!-- He tenido que poner la hoja de estilos entre comentarios porque no me renderizaba las lineas del fieldset-->
+                <h2>FIELDSET Y LEGEND</h2>
+                <p>
+                    El <em>fieldset</em> vamos a utilizarlo para poder agrupar o hacer grupos de campos dentro de un formulario.
+                    Nos sirven para ordenar formularios sobretodo aquellos que son muy grandes, nos va a aportar semántica. No es obligatorio 
+                    pero sí recomendable
+                </p>
+                <form action="/registrar-cliente/" name="registro" method="get" autocomplete="off" enctype="multipart/form-data"></form>
+                    <fieldset>
+                        <legend>Nombre del usuario</legend>
+                        <p>
+                        Nombre 
+                        <input type="text" name="nombre" placeholder="José" size="15" autocomplete="off">
+                        </p>
+                        <p>
+                        Apellidos
+                        <input type="text" name="apellidos" placeholder="Pérez López" size="25" autocomplete="off"><br />
+                        </p>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Más información</legend>
+                        <p>
+                        País
+                        <input type="text" name="pais" size="25" autocomplete="off"><br />
+                        </p>
+                        <p>
+                        Edad
+                        <input type="number" name="edad" min="0" max="100" step=".5">
+                        </p>
+                
+                        <p>
+                        <label for="bio">Biografía</label><br>
+                        <textarea name="bio" id="bio" cols="60" rows="5"></textarea>
+                        </p>
+                    </fieldset>
+                    <button>Enviar</button>
+                    <input type="reset" value="Borrar el formulario">
+                </form>
+                <pre>
+                    &lt;fieldset&gt;
+                        &lt;legend&gt;Nombre del usuario&lt;/legend&gt;
+                        ----inputs-------
+                    &lt;/fieldset&gt;
+                    &lt;fieldset&gt;
+                        &lt;legend&gt;Más información&lt;/legend&gt;
+                        ----inputs-------
+                    &lt;/fieldset&gt;
+                </pre>
+            </article>
+            <article>
+                <h2>Modificadores de validación y obligatoriedad</h2>
+                <p>
+                    Por ejemplo, algunos de los modificadores de validación son los siguientes y su uso está aconsejado:<br/>
+                    <ul>
+                        <li>required</li>
+                        <li>minlength, maxlength</li>
+                        <li>min, max</li>
+                        <li>type: email, url...</li>
+                        <li>pattern</li>
+                    </ul>
+                </p>
+            </article>
+        </section>
     </main>
 
     <footer>
