@@ -36,7 +36,234 @@
 
     <main>
         <h1>Imágenes en la web</h1>
-
+        <p>
+            Contenido:<br/>
+            <ul>
+                <li>Etiqueta IMG</li>
+                <li>Etiqueta Figure y Figcaption</li>
+                <li>Formatos admitidos</li>
+                <li>Imágenes responsive y alternativas</li>
+                <li>Picture</li>
+                <li>Source</li>
+            </ul>
+        </p>
+        <h2>Contenido vs presentación</h2>
+        <p>
+            Hay varias maneras de insertar imágenes en nuestra web. Primero tenemos que tener en cuenta si la imagen forma
+            parte del contenido (p.ej estamos contando la historia de Tim Berners Lee y queremos insertar su fotografía) o 
+            si la imagen va a formar parte de la decoración de la web para las visitas, esta sería la presentación.<br/>
+            Si son de contenido las meteremos con etiquetas de HTML pero si son de decoración las introduciremos mediante CSS.<br/>
+            <em>Contenido: &lt;img&gt;</em><br/>
+            <em>Decoración: CSS(background-image)</em>
+        </p>
+        <section>
+            <article>
+                <h2>Etiqueta IMG</h2>
+                <p>
+                    Va a ser la etiqueta con la cual vamos a introducir las imágenes en nuestra web. Es una etiqueta vací con lo cual 
+                    no tiene contenido, toda su información la recoge mediante sus atributos.
+                </p>
+                <h3>Atributos de IMG</h3>
+                <p>
+                    <strong>- src: </strong> Indica el nombre o la URL de la imagen a mostrar. Atributo obligatorio. <br/>
+                    <strong>- alt: </strong> Establece un texto alternativo que describe la imagen a mostrar. Atributo obligatorio. <br/>
+                    <strong>- width: </strong> Indica el ancho de la imagen en píxeles (sin la unidad). Sepuede hacer desde CSS. <br/>
+                    <strong>- height: </strong> Indica el alto de la imagen en píxeles (sin la unidad). Sepuede hacer desde CSS. <br/>
+                </p>
+                <p>
+                    Aunque forma parte de la presentación, el alto y el ancho de las imágenes es conveniente establecerlo para que en el 
+                    documento se sepa que espacio tiene que dejar a la hora de cargarse la página. Luego también se puede matizar con CSS.
+                </p>
+                <p>
+                    <em>La importancia de las URLs</em><br/>
+                    Recordemos la diferencia entre ruta absoluta (ruta completa que parte desde el directorio raiz hasta el fichero que queremos enlazar) 
+                    y la ruta relativa (ruta que parte desde el directorio que me encuentro hasta el fichero). Importante enlazar correctamente.<br/>
+                    <em>- Directorio . (directorio en el que me encuentro ahora)</em><br/>
+                    <em>- Directorio .. (directorio padre del directorio actual)</em>
+                </p>
+                <h4>Atributo LOADING</h4>
+                <p>
+                    Se encargará de gestionar cuando se carga una imagen en el navegador. A veces si la página es muy grande y contiene muchas 
+                    imágenes es conveniente que no se carguen todas a la vez, porque quizás tampoco leguemos hasta esa parte de la página y es 
+                    una descarga innecesaria. Para ello <em>loading</em> tiene 2 valores; <strong>eager y lazy</strong>
+                </p>
+                <p>
+                    <strong>- eager: </strong> El navegador descarga inmediatamente todas las imágenes. <br/>
+                    <strong>- lazy:</strong> El navegador pospone la descarga hasta que sea visible.<br/>
+                    <pre>&lt;img src="imagen.jpg" loading="lazy"&gt;</pre>
+                </p>
+            </article>
+            <article>
+                <h2>Etiqueta Figure y Figcaption</h2>
+                <p>
+                    Figure es una etiqueta de agrupación para imágenes que contendrá una etiqueta img y aporta semántica. Más adelante se manejará 
+                    mucho mejor con CSS. Recuerda que en la ilustración o figura se pueden contener todo tipo de elementos, no sólo imágenes: 
+                    videos, párrafos de texto o incluso contenido de otro tipo. <br/>
+                    Figcaption añade significado semántico a la imagen que se renderizará a modo de leyenda. Ayudará al atributo alt de la imagen. 
+                    Normalmente se utiliza como el texto pie de la imagen.<br/>
+                    <pre>
+                        &lt;figure&gt;
+                            &lt;figcaption&gt;Esta imagen es de relleno&lt;/figcaption&gt;
+                            &lt;img src="#" alt="texto"&gt;
+                        &lt;/figure&gt;
+                    </pre>
+                </p>
+            </article>
+            <article>
+                <h2>Formatos admitidos</h2>
+                <p>
+                    <em>Formatos tradicionales:</em><br/>
+                    <strong>PNG: </strong> Soporta transparencia. Compresión sin pérdidas. Imágenes "lisas". Ocupa algo más. (RECOMENDADA)<br/>
+                    <strong>JPG: </strong> Bueno porque tiene más compresión (con pérdidas). Ideal para imágenes con texturas. no permite
+                    transparencia. (RECOMENDADA)<br/>
+                    <strong>SVG: </strong> Formato vectorial. La imagen no esta guardada en un mapa de bits, sino que es una fórmula matemática
+                    que va pintando trazos. Sirve para imágenes que no tengan degradado excesivo o que no tenga muchos cambios de tonalidad de color 
+                    (la tipografía, los logos...) en el que son trazos muy concretos. Son ficheros de texto y ocupan muy poco. (RECOMENDADA)<br/>
+                    <strong>GIF: </strong> Sirve para pequeñas imágenes, animaciones... Pesado, poca calidad (RECOMENDADA aunque mejor usar mp4 o APNG)
+                </p>
+                <p>
+                    <em>Formatos modernos:</em><br/>
+                    <strong>WEBP: </strong> Alternativa libre de Google al jpeg, png y gif. Transparencias y animaciones (BUEN SOPORTE)<br/>
+                    <strong>JPEG2000: </strong> Formato evolución de jpeg. Poco utilizado. (SOLO SAFARI)<br/>
+                    <strong>JPEG-XR: </strong> Alternativa libre de Microsoft al jpeg. Poco utilizado. (SOLO IE)<br/>
+                    <strong>APNG: </strong> Alternativa libre a gif. Compatible con png. Soporta animaciones. (BUEN SOPORTE)
+                </p>
+                <p>
+                    <em>Formatos nueva generación:</em><br/>
+                    <strong>AVIF: </strong> Formato de imagen basado en AV1, no confundir con videos AVI. (CON PRECAUCIÓN)<br/>
+                    <strong>JPEG-XL: </strong> Alternativa competidora a AVIF. Evolución moderna de jpeg. (AUN POCO SOPORTE)
+                </p>
+                <p>
+                    Cualquier otro formato no mostrado en esta lista no está recomendado para utilizar en web (ej. bmp, tiff, raw, nef, psd, cdr, 
+                    son formatos no orientados a web).
+                </p>
+            </article>
+            <article>
+                <h2>Imágenes responsive y alternativas</h2>
+                <p>
+                    En algunas ocasiones nos podría interesar indicar al navegador que debe descargarse una imagen concreta si el dispositivo
+                    tiene una cierta resolución (por ejemplo móvil), pero en el caso de ser un dispositivo de alta resolución (por ejemplo escritorio) 
+                    descargue una imagen de mayor resolución. De esta forma no desperdiciamos recursos o tiempo de descarga. Lo mismo con pantallas que 
+                    tengan una densidad de píxeles mayor, y pueda mostrar imágenes a mayores resoluciones.
+                </p>
+                <p>
+                    Atributos: <br/>
+                    <strong>- srcset: </strong> Vamos a indicar un conjunto de imágenes y va a cargar una u otra dependiendo de ciertos criterios.<br/>
+                    <strong>- sizes: </strong> Indica un conjunto de condiciones de medios para aplicar al srcset.
+                </p>
+                <p>
+                    <strong>Atributo SRCSET</strong><br/>
+                    Mediante el atributo srcset se puede indicar una lista de recursos (imágenes) separados por coma, que se utilizarán en situaciones 
+                    concretas cuando se cumplan determinados criterios como los indicados anteriormente. Los valores de srcset tendrían el siguiente formato: <br/>
+                    <em>imagen_400.jpg 400w, imagen_900.jpg 900w, imagen_1200.jpg 1200w</em>
+                </p>
+                <p>
+                    Ancho: Ancho de pantalla en píxeles, seguido de la letra w (Ejemplo 400w, 800w)<br/>
+                    Densidad: Densidad de píxeles con decimales, seguido de la letra x (Ejemplo 3x, 2.5x)<br/>
+                    <pre>&lt;img src="imagen_400w.jpg" alt="Logo HTML5" srcset="imagen_400.jpg 400w, imagen_900.jpg 900w, imagen_1200.jpg 1200w"&gt;</pre>
+                </p>
+            </article>
+            <article>
+                <h2>Picture y Source</h2>
+                <p>
+                    HTML5.1 incorpora un nuevo sistema para utilizar imágenes en nuestros documentos HTML de forma mucho más flexible que la etiqueta img 
+                    tradicional. Esta nueva etiqueta nos permitirá mostrar imágenes dependiendo de nuestras necesidades.
+                </p>
+                <p>
+                    <pre>
+                        &lt;picture&gt;
+                            &lt;source media="(min-width:650px)" srcset="img_pink_flowers.jpg"&gt;
+                            &lt;source media="(min-width:465px)" srcset="img_white_flowers.jpg"&gt;
+                            &lt;img src="img_orange_flowers.jpg" alt="Flowers" style="width:auto;"&gt;
+                        &lt;/picture&gt;
+                    </pre>
+                    Dependiendo del tamaño de la ventana cargará una imagen u otra.<br/>
+                    <em>picture: </em> Agrupa una serie de imágenes. Etiqueta contenedora.<br/>
+                    <em>source: </em> Mostrará la imagen que cumpla una serie de criterios opcionales.
+                </p>
+                <p>
+                    Uno de los principales problemas que teníamos al utilizar la etiqueta img es que si utilizabamos un formato de imagen moderno, 
+                    que puede no estar soportado en algunos navegadores, esa imagen no se verá.<br/>
+                    Nos falta la posibilidad de establecer alternativas, para que en el caso de estar soportado puede utilizarla, y en caso contrario 
+                    utiliza un formato alternativo mas antigüo, y así poder aprovecharnos de las ventajas de formatos nuevos si hay soprte (menor peso, 
+                    mayor calidad...). Con la etiqueta source solucionamos esto.<br/>
+                    <pre>
+                        &lt;picture&gt;
+                            Aqui colocaremos posibles imágenes candidatas (source)
+                            Aqui colocaremos la imagen img a utilizar por defecto.
+                        &lt;/picture&gt;
+                    </pre>
+                </p>
+                <p>
+                    Ejemplo de uso:<br/>
+                    <pre>
+                        &lt;picture&gt;
+                            &lt;source srcset="imagen.avif"&gt;
+                            &lt;source srcset="imagen.webp"&gt;
+                            &lt;img src="imagen.jpg" alt="Descripción imagen"&gt;
+                        &lt;/picture&gt;
+                    </pre>
+                    Le estamos dando diferentes alternativas para que mi imagen se vea lo mejor posible dependiendo del navegador en el que se utilize.<br/>
+                    - El navegador comprobará la primera etiqueta source con una imagen en formato .avif. <br/>
+                    - Si el navegador la soporta, la insertará en el atributo src de la etiqueta img y la usará. <br/>
+                    - Si el navegador no la soporta, analizará la siguiente etiqueta source con formato webp. <br/>
+                    - Si el navegador la soporta, la insertará en el atributo src de la etiqueta img y la usará. <br/>
+                    - Si el navegador no la soporta, utilizará la etiqueta img por defecto indicada al final.
+                </p>
+            </article>
+            <article>
+                <h2>Imágenes responsive II</h2>
+                <p>
+                    Otra ventaja interesante es que con picture podemos crear imágenes responsive que cambien dependiendo de características de las 
+                    media-queries (CSS). Por ejemplo, utilizaremos min-width (tamaño mínimo de ancho de la pantalla) en el siguiente ejemplo:
+                </p>
+                <p>
+                    <pre>
+                        &lt;picture&gt;
+                            &lt;source media="(width>=900px)" srcset="logo-large.png"&gt;
+                            &lt;source media="(width>=600px) and (width&lt;900px)" srcset="logo-medium.png"&gt;
+                            &lt;source media="(width&lt;600px)" srcset="logo-small.png"&gt;
+                            &lt;img src="logo-medium.png" alt="Logo HTML5"&gt;
+                        &lt;/picture&gt;
+                    </pre>
+                    Según tamaño de pantalla: <br/>
+                    - Dispositivo grande mayor de 900px: Muestra logo-large.png. <br/>
+                    - Dispositivo grande mayor de 600px y menor de 900: Muestra logo-medium.png. <br/>
+                    - Dispositivo pequeño menor de 600px: Muestra logo-small.png. <br/>
+                    - Si no cumple las anteriores (o no soporta las etiquetas) mostrará logo-medium.png.
+                </p>
+                <p>
+                   <pre>
+                        &lt;picture&gt;
+                            &lt;source media="(width>=900px)" 
+                                        srcset="logo-large.png,
+                                                logo-large-hd.png 2x,
+                                                logo-large-fhd.png 3x"&gt;
+                            &lt;source media="(width>=600px) and (width&lt;900px)" 
+                                        srcset="logo-medium.png,
+                                                logo-medium-hd.png 2x,
+                                                logo-medium-fhd.png 3x"&gt;
+                            &lt;source media="(width&lt;600px)" srcset="logo-small.png"&gt;
+                                        srcset="logo-small.png,
+                                                logo-small-hd.png 2x,
+                                                logo-small-fhd.png 3x"&gt;
+                            &lt;img src="logo-medium.png" alt="Logo HTML5"&gt;
+                        &lt;/picture&gt;
+                   </pre> 
+                   Según densidad de píxeles: <br/>
+                   Observa que en cada etiqueta source se establece el atributo srcset para indicar una imagen para una determinada densidad de pantalla 
+                   (por ej. 2x o 3x). Si se omite y no se indica ninguna es lo mismo que indicar 1x. Esto es rizar el rizo, pero es mas profesional, 
+                   ten en cuenta que este ejemplo son 9 imágenes diferentes.
+                </p>
+            </article>
+        </section>
+        <section>
+            <figure>
+                <figcaption>Figcaption, leyenda o pie de la foto</figcaption>
+                <img src="./img/237-536x354.jpg" alt="Texto de la foto">
+                <img src="./img/237-536x354.jpg" alt="Texto de la foto" width="800" height="600">
+            </figure>
+        </section>
     </main>
 
     <footer>
