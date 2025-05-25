@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Formularios - Parte 1</title>
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="description" content="En este documento probaremos de formularios, form, get, post, input en un documento HTML.">
+  <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+  <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+        <section>
+            <h2>Formulario de ejemplo</h2>
+            <p>
+                A continuación un formulario de ejemplo utilizando algunas etiquetas importantes del atributo type. <br/>
+                Obviamente es una prueba y al pulsar enviar no encontrara destino.
+            </p>
+            <form action="/registro_en_mi_web/" name="registro" method="post" autocomplete="on" enctype="multipart/form-data">
+                <!-- Si cambiamos el método de envío a GET podemos comprobar como todos los datos de los campos del formulario 
+                 aparecen en la URL, iclusi el campo hidden -->
+            <input type="hidden" name="miweb" value="TutorialHtml">
+            <p>
+                Nombre 
+                <input type="text" name="nombre" placeholder="Jesús" size="15">
+            </p>
+            <p>
+                Apellidos
+                <input type="text" name="apellidos" placeholder="Sierra" size="25"><br />
+            </p>
+            <p>
+                País
+                <input type="text" name="pais" size="25"><br />
+            </p>
+            <p>
+                Edad
+                <!-- type number y su atributo propio step también acepta decimales step=.5" -->
+                <input type="number" name="edad" min="0" max="100">
+            </p>
+            <p>
+                Email
+                <input type="email" name="email">
+            </p>
+            <p>
+                Contraseña
+                <input type="password" name="clave">
+            </p>
+            <p>
+                Indica tu página web
+                <input type="url" name="url">
+            </p>
+            <p>
+                Danos tu foto
+                <input type="file" name="foto">
+            </p>
+            <button>Enviar</button>
+            <input type="reset" value="Borrar el formulario">
+            </form>
+        </section>
+
+    </main>
+
+</body>

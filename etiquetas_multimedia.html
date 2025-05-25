@@ -129,8 +129,64 @@
                     <pre>
                         &lt;iframe src="https://cdcascoviejo.net" frameborder="0" width="1024" height="768"&gt;&lt;/iframe&gt;
                     </pre>
-                    <iframe src="https://cdcascoviejo.net" frameborder="0" width="1024" height="768"></iframe>
                 </p>
+                <iframe src="https://cdcascoviejo.net" frameborder="0" width="1024" height="768"></iframe>
+                <p>
+                    Ejemplo de iframe interno:<br/>
+                    <pre>
+                        &lt;iframe src="ejemplo_formulario.html" frameborder="0" width="1024" height="768"&gt;&lt;/iframe&gt;
+                    </pre>
+                </p>
+                <iframe src="ejemplo_formulario.html" frameborder="0" width="1024" height="500"></iframe>
+                <p>
+                    Ejemplo de iframe de Youtube:<br/>
+                    En este caso desde youtube, pulsando en compartir podemos copiar directamente el código del iframe.<br/>
+                    <pre>
+                        &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/zw8hbzT7DcA?si=u7EDnY5BfTNI-S_C" 
+                        title="YouTube video player" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen&gt;&lt;/iframe&gt;
+                    </pre>
+                </p>
+                <iframe width="560" height="315" 
+                src="https://www.youtube.com/embed/zw8hbzT7DcA?si=u7EDnY5BfTNI-S_C" 
+                title="YouTube video player" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerpolicy="strict-origin-when-cross-origin" 
+                allowfullscreen></iframe>
+                <p>
+                    Ejemplo de iframe de Google Maps:<br/>
+                </p>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d23462.931146062176!2d-2.9600573977705458!3d42.6853
+                7240132342!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4f9aa20a5503a7%3A0xc523fad9e79edfff!2sMiranda%20de%20
+                Ebro%2C%20Burgos!5e0!3m2!1ses!2ses!4v1748184747385!5m2!1ses!2ses" 
+                width="600" height="450" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <h3>El atributo name</h3>
+                <p>
+                    Es posible utilizar el atributo name en nuestro iframe para darle un nombre al marco y cargar direcciones URL diferentes 
+                    a través de una etiqueta de enlace "a", haciendo referencia al marco a través del atributo target.
+                </p>
+                <ul>
+                    <li><a href="https://es.wikipedia.org/wiki/HTML" target="myIframe">Cargar HTML en la Wikipedia</a></li>
+                    <li><a href="https://es.wikipedia.org/wiki/CSS" target="myIframe">Cargar CSS en la Wikipedia</a></li>
+                </ul>
+                <iframe src="" width="1024" height="768" name="myIframe" frameborder="0"></iframe>
+                <h3>El atributo srcdoc (poco utilizado)</h3>
+                <p>
+                    Por otro lado el atributo srcdoc nos permite indicar directamente el código fuente del iframe en su valor, algo que 
+                    puede ser interesante para crear contenido autogenerado a demanda.
+                </p>
+                <pre>
+                    &lt;iframe src="http://pagina.com/apartado/"
+                        srcdoc="&lt;p&gt;¡Hola! ¡Soy el &lt;strong&gt;texto del iframe&lt;/strong&gt;!&lt;/p&gt;"&gt;
+                    &lt;/iframe&gt;
+                </pre>
             </article>
         </section>
 
