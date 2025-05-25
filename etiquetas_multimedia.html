@@ -37,6 +37,102 @@
 
     <main>
         <h1>Etiquetas multimedia</h1>
+        <p>
+            Contenido:
+            <ul>
+                <li>Etiquetas de contenido incrustado</li>
+                <li>Embed</li>
+                <li>Iframe</li>
+                <li>Etiqueta video</li>
+                <li>Etiqueta audio</li>
+                <li>Etiqueta canvas</li>
+                <li>Etiquetas map y area</li>
+            </ul>
+        </p>
+        <section>
+            <article>
+                <h2>Etiquetas de contenido incrustado</h2>
+                <p>
+                    Es coger un trozo de otra web e incrustarlo en nuestra web. Puede ser externa o interna.<br/>
+                    - Normalmente se usarán para cargar contenido externo.<br/>
+                    - También se puede cargar contenido de nuestra misma web.<br/>
+                    - Es una referencia a un recurso almacenado en otra ubicación.<br/>
+                    - Al estar enlazado, garantiza que si el original cambia, nuestra web mostrará la versión actualizada.<br/>
+                </p>
+                <p>
+                    Podemos incrustar contenido como objetos multimedia, bloques de código HTML con contenidos diseñados por terceros e incluso webs enteras.<br/>
+                    Para ello usaremos 2 tipos de etiquetas:<br/>
+                    - <em>embed</em><br/>
+                    - <em>iframe</em> (casi siempre se utiliza esta)
+                </p>
+            </article>
+            <article>
+                <h2>Etiqueta embed</h2>
+                <p>
+                    Podemos incrustar casi cualquier tipo de recurso:<br/>
+                    - Documentos HTML (mejor usar iframe)<br/>
+                    - Imágenes (mejor usar img)<br/>
+                    - Videos (mejor usar video)<br/>
+                    - Audio (mejor usar audio)<br/>
+                    - Flash (ya no se utiliza)<br/>
+                    - Controles ActiveX
+                </p>
+                <p>
+                    Atributos de la etiqueta embed:<br/>
+                    - <strong>src:</strong> La URL (interna o externa) del recurso que será incrustado y reproducido o ejecutado por el plug-in.<br/>
+                    - <strong>type:</strong> Tipo de contenido (también conocido como "tipo de medio en internet" o "tipo MIME").<br/>
+                    - <strong>width y height:</strong> Determinan el tamaño del contenedor en el que se va a incrustar el contenido (recomendado para 
+                    informar al navegador como renderizar el espacio que debe reservar).<br/>
+                </p>
+                <p>
+                    Ejemplo:<br/>
+                    <pre>
+                        &lt;embed type="video/webm" src="trailers/estreno.mov" width="640" height="480"&gt;
+                    </pre><br/>
+                    Existen etiquetas nuevas en HTML5 que son mucho mejores que usar embed.
+                </p>
+            </article>
+            <article>
+                <h2>Etiqueta iframe</h2>
+                <p>
+                    Etiqueta de referencia para poder incrustar contenido externo (o interno). Representa un contexto de navegación anidado (una web dentro de 
+                    otra web). Es una ventana que permite acceder a un recurso que se encuentra ubicado en un contexto distinto a la página que se está mostrando 
+                    en el navegador.<br/>
+                    Básicamente, permite incrustar un documento o parte de un documento web dentro de una página HTML (interna o externa).
+                </p>
+                <p>
+                    Atributos:<br/>
+                    - <strong>src: </strong> La URL del recurso incrustado. <br/>
+                    - <strong>srcdoc: </strong> Contiene el código HTML que mostrar dentro del elemento iframe. Si existe este atributo, se impone a la referencia 
+                    proporcionada por el atributo sr. (no se utiliza). <br/>
+                    - <strong>sandbox: </strong> Permite proporcionar restricciones al documento incrustado en el elemento iframe con objeto de mejorar 
+                    la seguridad de la página (vamos a incrustar una página pero no va a poder hacer nada con la página padre). <br/>
+                    - <strong>allow: </strong> Directivas referentes a permisos de acceso a determinados elementos del dispositivo físico, tales como el 
+                    acelerómetro (detecta si hemos girado el móvil, lo tenemos vertical, lo estamos moviendo...), la cámara, la geolocalización... HTML5 tiene APIs 
+                    para poder acceder a elementos de nuestro navegador y de nuestro dispositivo. Con esto hacemos que ese iframe tenga permisos o no para 
+                    poder utilizar esas características. <br/>
+                    - <strong>allowfullscreen: </strong> Si existe la posibilidad, permite que dentro del iframe podamos llamar a la propiedad fullscreen de nuestro 
+                    navegador, permite al contenido incrustado ocupar la pantalla completa. <br/>
+                    - <strong>width y height: </strong> Permiten indicar el ancho y alto en píxeles. <br/>
+                    - <strong>loading: </strong> Con el valor <em>lazy</em> el contenido se carga cuando este se haga visible; con el valor <em>eager</em> (valor 
+                    por defecto) el contenido se carga inmediatamente.
+                </p>
+                <p>
+                    ¿Que ocurre si queremos colocar contenido de una web externa?<br/>
+                    Por ejemplo servicios como Youtube, Vimeo, SoundCloud... u otros sitios similares. Se trata de servicios que ofrecen contenido externo para incrustar 
+                    en nuestra página web, pero lo que nos proporciona no son imágenes, video o audio en formatos que reconozca el navegador, sino un enlace con contenido HTML 
+                    muy diverso, que puede incluir JS, CSS, imágenes, videos y muchos otros recursos.<br/>
+                    <strong>Content-Security-Policy</strong> establece que va a haber sitios web que no van a permitir ser incrustados en otros sitios web.
+                </p>
+                <p>
+                    Ejemplo de iframe a una web externa:<br/>
+                    <pre>
+                        &lt;iframe src="https://cdcascoviejo.net" frameborder="0" width="1024" height="768"&gt;&lt;/iframe&gt;
+                    </pre>
+                    <iframe src="https://cdcascoviejo.net" frameborder="0" width="1024" height="768"></iframe>
+                </p>
+            </article>
+        </section>
 
     </main>
 
