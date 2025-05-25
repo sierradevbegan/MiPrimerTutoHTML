@@ -189,7 +189,76 @@
                 </pre>
             </article>
         </section>
-
+        <section>
+            <article>
+                <h2>Etiqueta video</h2>
+                <p>
+                    En HTML5 se introduce la posibilidad de mostrar videos directamente desde nuestro navegador. De hecho, si arrastramos un video 
+                    a la ventana del navegador, comprobaremos que comienza a reproducirse en él. Esto ocurre porque los navegadores son capaces 
+                    de mostrar imágenes, reproducir video y audio.
+                </p>
+                <p>
+                    Atributos básicos:<br/>
+                    - <strong>src: </strong> Archivo o URL del video a reproducir. Obligatoria si no tiene etiquetas dentro. <br/>
+                    - <strong>width y height: </strong> Indica el ancho y alto del video. *Recomendable establecerlo.
+                </p>
+                <p>
+                    Atributos de control:<br/>
+                    - <strong>autoplay: </strong> Comienza a reproducir el video automáticamente. Ojo, está sujeto a normas del navegador. <br/>
+                    - <strong>loop: </strong> Vuelve a iniciar el video cuando finaliza su reproducción (en bucle). <br/>
+                    - <strong>muted: </strong> Establece que el video se reproduzca con sonido muteado (silenciado). <br/>
+                    - <strong>controls: </strong> Muestra los controles de reproducción (por defecto no se muestran). <br/>
+                    - <strong>playsinline: </strong> Reproduce el video en linea, es decir, en su area de reproducción.
+                </p>
+                <p>
+                    <em>Autoplay con grandes limitaciones. </em> En los navegadores se han introducido numerosas limitaciones para que el autoplay 
+                    funcione. En mobile ya no funciona y en los navegadores se va a requerir que haya habido alguna interacción del usuario.
+                </p>
+                <p>
+                    Atributos de precarga: <br/>
+                    - <strong>poster: </strong> Muestra una imagen a modo de presentación. <br/>
+                    - <strong>preload: </strong> Antes de que empieze a reproducir el video ya tenga una pequeña precarga en la memoria para que cuando 
+                    le das a play ya se pueda reproducir y no tenga que esperar a cargar la 1ª parte del video.
+                </p>
+                <p>
+                    Formatos compatibles:<br/>
+                    <em>* Formatos modernos:</em><br/>
+                    - <strong>MP4: </strong> Codec x264, DivX H264 - Alta calidad. El códec x264 es libre. (buen soporte, el más recomendado). <br/>
+                    - <strong>WebM: </strong> Codecs VP8, VP9 - Alternativa libre a MP$ de Google (buen soporte) <br/>
+                    <em>* Formatos de nueva generación:</em><br/>
+                    - <strong>AV1: </strong> Basado en códecs VP10, Daala y Thor. Compite con HEVC/H.265 (soporte irregular) <br/>
+                    - <strong>HEVC: </strong> Codecs x265, DivX HEVC. Futura evolución de MP4 (soporte irregular).<br/>
+                    <em>* Formatos más antigüos o no orientados a web:</em><br/>
+                    - <strong>OGV: </strong> Codec Theora. Alternativa libre a MP4 (sin soporte en Safari).<br/>
+                    - <strong>MKV: </strong> Codecs Matroska. Buena compresión. Potente (alto consumo CPU)<br/>
+                    - <strong>AVI: </strong> Codecs XviD, DivX 3/5. Menor compresión que MP4 (anticuado).
+                </p>
+                <p>
+                    Uso de Source: La etiqueta video también puede contener la etiqueta source igual que con las imágenes.<br/>
+                    <pre>
+                        &lt;video width="640" height="480"&gt;
+                            &lt;source src="video.mp4" type="video/mp4" /&gt;
+                            &lt;source src="video.webm" type="video/webm" /&gt;
+                            &lt;source src="video.ogv" type="video/ogg" /&gt;
+                            &lt;img src="imagen.png" alt="Video no soportado" /&gt;
+                            Su navegador no soporta contenido multimedia.
+                        &lt;/video&gt;
+                    </pre>
+                </p>
+                <p>
+                    Ejemplo de video:<br/>
+                    <pre>
+                        &lt;video width="300" controls poster="img/poster.png" src="assets/video.mp4"&gt;&lt;/video&gt;
+                    </pre>
+                </p>
+            </article>
+            <article>
+                <h2>Etiqueta audio</h2>
+                <p>
+                    
+                </p>
+            </article>
+        </section>
     </main>
 
     <footer>
