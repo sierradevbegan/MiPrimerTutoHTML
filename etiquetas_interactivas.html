@@ -61,6 +61,53 @@
             <article>
                 <h2>Ocultación semántica</h2>
                 <p>
+                    En muchas ocasiones, cuando queremos ocultar un elemento lo hacemos con CSS utilizando las propiedades <em>display:none, visibility:hidden, opacity:0</em> 
+                    o alguna similar.<br/>
+                    Lo ideal sería tener una forma de saber si semánticamente tiene sentido que un elemento está oculto, por ejemplo, porque estamos enfocados en otra sección 
+                    y la sección oculta no es relevante en este momento.<br/>
+                    Con el atributo <em>hidden</em> hacemos desaparecer visualmente un elemento HTML (y todo su contenido, si está en una etiqueta contenedora).<br/>
+                    Hasta ahora, para realizar esta tarea teníamos que recurrir a CSS, ya que se trata de una cuestión de presentación visual.
+                </p>
+                <p> Código:
+                    <pre>
+                        &lt;div&gt;
+                            &lt;h2&gt;Sección 1&lt;/h2&gt;
+                            &lt;p&gt;
+                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum maiores debitis qui, aut architecto corrupti quis cupiditate labore dolores 
+                                nemo dolorem facilis vel similique aspernatur, rem magnam a. Placeat, architecto.
+                            &lt;/p&gt;
+                        &lt;/div&gt;
+                        &lt;div hidden&gt; &lt;!-- Esta sección permanecerá oculta --&gt;
+                            &lt;h2&gt;Sección 2&lt;/h2&gt;
+                            &lt;p&gt;
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore sapiente corrupti neque ut molestias laudantium modi nulla fuga excepturi 
+                                magnam perferendis distinctio mollitia suscipit, sunt iusto rem, labore saepe quo?
+                            &lt;/p&gt;
+                        &lt;/div&gt;
+                    </pre>
+                </p>
+                <div>
+                    <h2>Sección 1</h2>
+                    <p>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum maiores debitis qui, aut architecto corrupti quis cupiditate labore dolores 
+                        nemo dolorem facilis vel similique aspernatur, rem magnam a. Placeat, architecto.
+                    </p>
+                </div>
+                <div hidden> <!-- Esta sección permanecerá oculta -->
+                    <h2>Sección 2</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore sapiente corrupti neque ut molestias laudantium modi nulla fuga excepturi 
+                        magnam perferendis distinctio mollitia suscipit, sunt iusto rem, labore saepe quo?
+                    </p>
+                </div>
+                <p>
+                    El atributo hidden, no tiene nada extraño. Simplemente se trata de un atributo, que cuando un elemento lo incorpore, el mismo tendrá 
+                    un <em>display:none</em> por defecto. Sin embargo, nosotros podemos cambiar el estilo mediante CSS si lo deseamos.
+                </p>
+            </article>
+            <article>
+                <h2>Etiquetas details y summary</h2>
+                <p>
                     
                 </p>
             </article>
