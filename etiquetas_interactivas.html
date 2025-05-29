@@ -108,7 +108,58 @@
             <article>
                 <h2>Etiquetas details y summary</h2>
                 <p>
-                    
+                    <em>Details,</em> se trata de un elemento que muestra un texto y forma o icono identificativo que el usuario puede pulsar y desplegar (modo 
+                    acordeón) una información que por defecto está contraida.<br/>
+                    Se trata de una etiqueta contenedora que actúa como un div, salvo que todo el contenido de esta etiqueta no se muestra inicialmente.<br/>
+                    Con <em>summary</em> podremos personalizar el texto que sale por defecto a la hora de usar una etiqueta details.
+                </p>
+                <p>
+                    Código:<br/>
+                    <pre>
+                        &lt;details&gt;
+                            &lt;summary&gt;Ejemplo de summary&lt;/summary&gt;
+                            &lt;section&gt;
+                                &lt;p&gt;
+                                    Lorem ipsum dolor sit amet consectetur 
+                                    adipisicing elit. Inventore sapiente 
+                                    corrupti neque ut molestias laudantium 
+                                    modi nulla fuga excepturi 
+                                    magnam perferendis distinctio mollitia 
+                                    suscipit, sunt iusto rem, labore saepe quo?
+                                &lt;/p&gt;
+                            &lt;/section&gt;
+                        &lt;/details&gt;
+                    </pre>
+                </p>
+                <details>
+                    <summary>Ejemplo de summary</summary>
+                    <section>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur <br/>
+                            adipisicing elit. Inventore sapiente <br/>
+                            corrupti neque ut molestias laudantium <br/>
+                            modi nulla fuga excepturi <br/>
+                            magnam perferendis distinctio mollitia <br/>
+                            suscipit, sunt iusto rem, labore saepe quo?                          
+                        </p>
+                    </section>
+                </details>
+                <p>
+                    *Con el atributo <em>open (&lt;details open&gt;)</em>, el details por defecto va a estar abierto.
+                </p>
+            </article>
+            <article>
+                <h2>Dialog y popover</h2>
+                <p>
+                    En HTML5 es posible crear ventanas de diálogo personalizadas sin necesidad de JS (o mediante muy poco JS), de forma
+                    nativa, e incluso crear ventanas modales. Todo ello se realizará mediante la etiqueta HTML <em>dialog</em> en diferentes 
+                    modalidades:
+                </p>
+                <p>
+                    - <strong>Ventana de diálogo:</strong> Se denomina así a una ventana que comunica el sistema o máquina con el usuario, para 
+                    anunciarle información, pedirle confirmación, pedirle datos... <br/>
+                    - <strong>Ventana de diálogo modal:</strong> Se denomina así a una variación de la anterior, donde se obliga al usuario a 
+                    atenderla y responderla, impidiendo hacer ninguna otra tarea mientras.
                 </p>
             </article>
         </section>
