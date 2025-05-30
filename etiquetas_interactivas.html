@@ -161,6 +161,62 @@
                     - <strong>Ventana de diálogo modal:</strong> Se denomina así a una variación de la anterior, donde se obliga al usuario a 
                     atenderla y responderla, impidiendo hacer ninguna otra tarea mientras.
                 </p>
+                <p>
+                    <em>Dialog, </em> a partir de HTML5.1, se incorpora una etiqueta dialog mediante la cual podemos construir nuestras propias 
+                    ventanas de diálogo personalizadas. Dichas ventanas pueden contener toda la información HTML que queramos: texto, imágenes, 
+                    botones, videos... y ser personalizada mediante CSS.<br/>
+                    Código básico:<br/>
+                    <pre>
+                        &lt;dialog open&gt; &lt;!-- Con el atributo open estará abierta por defecto --&gt;
+                            &lt;p&gt;Ejemplo de mensaje de diálogo&lt;/p&gt;
+                        &lt;/dialog&gt;
+                    </pre>
+                    <dialog open>
+                        <p>Ejemplo de mensaje de diálogo</p>
+                    </dialog>
+                </p>
+                <p>
+                    Cerrar la ventana una vez abierta dentro del elemento: (ver código furnte de la página para ver el código de este ejemplo)
+                </p>
+                <button onClick="document.getElementById('alerta_dialogo').open=true">Abrir</button>
+                <dialog id="alerta_dialogo">
+                    <img class="icon" src="favicon-256x256.png" alt="Icono favicon">
+                    <p>Esto es un ejemplo de mensaje de dialogo</p>
+                    <button onClick="document.getElementById('alerta_dialogo').close()">Cerrar</button>
+                </dialog>
+                <p>
+                    <em>Dialog modal: </em><br/>
+                    - Por defecto, el fondo se oscurece un poco<br/>
+                    - La ventana se suelecentrar también verticalmente, para centrar la atención en ella. <br/>
+                    - Solo puede haber una ventana modal, ventanas normales pueden existir varias.<br/>
+                    - Lo más importante: No deja interactuar con ningún otro elemento de la página.
+                </p>
+                <p>Esto va a ser muy parecido a los popovers</p>
+            </article>
+            <article>
+                <h2>Popover</h2>
+                <p>
+                    Los popover (pop over, salta por encima) son una nueva forma en HTML5 de crear elementos emergentes, es decir, contenido 
+                    que aparecerá al usuario por encima del contenido que ya estaba visualizando, para así llamar temporalmente su atención.
+                </p>
+                <p>
+                    <strong>- popover: </strong> Convierte el elemento HTML en un potencial contenido emergente. Por defecto, valor <em>auto.</em><br/>
+                    <strong>- popovertarget: </strong> Indica el ID del elemento que queremos manipular.<br/>
+                    <strong>- popovertargetaction: </strong> Indica la acción que se realizará sobre el elemento con el ID anterior.
+                </p>
+                <p>
+                    Código básico:<br/>
+                    <pre>
+                        &lt;button popovertarget="mensaje" popovertargetaction="toogle"&gt;Mostrar&lt;/button&gt;
+                        &lt;div id="mensaje" popover&gt;
+                            &lt;p&gt;&lt;strong&gt;Alerta!&lt;/strong&gt; Correo recibido&lt;/p&gt;
+                        &lt;/div&gt;
+                    </pre>
+                </p>
+                <button popovertarget="mensaje" popovertargetaction="toogle">Mostrar</button>
+                <div id="mensaje" popover>
+                    <p><strong>Alerta! </strong> Correo recibido</p>
+                </div>
             </article>
         </section>
 
