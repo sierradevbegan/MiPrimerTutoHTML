@@ -24,6 +24,17 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
   <meta name="theme-color" content="#fafafa">
+  <!-- script copiado jquery cdn 3.x (minified) librería jquery para que funcione el select2 -->
+  <script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+  crossorigin="anonymous"></script>
+  <!-- Estas 2 lineas son archivos (uno css y otro JS) para el correcto funcionamiento de select2 (select2.org) -->
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+  <!-- Script para wysiwyg con ckeditor -->
+  <script src="https://cdn.ckeditor.com/ckeditor5/38.0.1/classic/ckeditor.js"></script>
 </head>
 
 <body>
@@ -217,6 +228,103 @@
                 <div id="mensaje" popover>
                     <p><strong>Alerta! </strong> Correo recibido</p>
                 </div>
+            </article>
+            <article>
+                <h2>Datalist</h2>
+                <p>
+                    Aunque hemos visto controles como las casillas de verificación, los botones de opción (radio), o las listas de selección hay 
+                    situaciones en las que puede que ninguno de estos controles nos sirvan. Por ejemplo, una opción de varias posibles, pero 
+                    también abierta a que se añadan más opciones por parte del usuario. Esto sería una mezcla entre un campo input de tipo texto y 
+                    una lista desplegable select.<br/>
+                    La etiqueta datalist debe indicarse con un atributo ID para identificarse. En su interior, incluiremos varias etiquetas option para 
+                    añadir opciones, al igual que lo hacemos con una etiqueta select, y enlazaremos con un input:
+                </p>
+                <p>
+                    Código:
+                    <pre>
+                        &lt;input type="text" list="items"&gt;
+                        &lt;datalist id="items"&gt;
+                            &lt;option value="1"&gt;Opcion 1&lt;/option&gt;
+                            &lt;option value="2"&gt;Opcion 2&lt;/option&gt;
+                            &lt;option value="3"&gt;Opcion 3&lt;/option&gt;
+                            &lt;option value="4"&gt;Opcion 4&lt;/option&gt;
+                            &lt;option value="5"&gt;Opcion 5&lt;/option&gt;
+                        &lt;/datalist&gt;
+                    </pre>
+                    Elige una opción: 
+                    <input type="text" list="items">
+                    <datalist id="items">
+                        <option value="1">Opcion 1</option>
+                        <option value="2">Opcion 2</option>
+                        <option value="3">Opcion 3</option>
+                        <option value="4">Opcion 4</option>
+                        <option value="5">Opcion 5</option>
+                    </datalist>
+                </p>
+                <p>
+                    Es muy parecido a select2, que vamos a ver ahora, pero datalist es nativo del navegador.
+                </p>
+            </article>
+            <article>
+                <h2>Select2</h2>
+                <p>
+                    Esto mas que una etiqueta es una librería propia de JS, que nos va a permitir hacer lo mismo que hemos hecho con el datalist 
+                    pero de forma más "profesional". No es nativo del navegador porque se usa con una librería de JS.
+                </p>
+                <p>
+                    Para que funcione debemos entrar en <em>select2.org</em> porque debemos instalar la librería en nuestra página.<br/>
+                    Debemos enlazar 2 archivos, un javascript y un css.<br/>
+                    <em>select2.org/getting-started/installation</em><br/>
+                    Allí copiaremos 2 lineas que aparecen en "Using Select2 from a CDN":<br/>
+                    Las copiaremos y las pegaremos en el <em>head</em> de nuestra página. Con esto ya nos hemos traido un archivo css y un archivo JS.<br/>
+                    Esto va a funcionar con los elementos desplegables, es decir, elementos de tipo select (sólo nos dejará escoger aquellos elementos 
+                    que están en la lista).
+                </p>
+                <p>
+                    Ejemplo: (ver código fuente en la página)
+                </p>
+                <p>
+                    Selecciona tu lenguaje favorito:<br/>
+                    <select name="" id="weblangs">
+                        <option value="1">HTML</option>
+                        <option value="2">CSS</option>
+                        <option value="3">JS</option>
+                        <option value="4">Python</option>
+                        <option value="5">C</option>
+                        <option value="6">Java</option>
+                        <option value="7">PHP</option>
+                        <option value="8">C++</option>
+                    </select>
+                </p>
+                <!-- Funcion jquery que se usa para convertir el select en un select2 
+                 (select2.org/getting-started/basic-usage)
+                 Esto necesitará también una librería jquery que copiaremos y pegaremos en head
+                 buscar jquery cdn en el buscador
+                 -> releases/jquery.com
+                 jquery 3.x seleccionamos minified y copiamos el script que nos sale -->
+                <script>
+                    $(document).ready(function() {
+                        $('#weblangs').select2();
+                    });
+                </script>
+            </article>
+            <article>
+                <h2>Wysiwyg</h2>
+                <p>
+                    Es un textarea que lo vamos a convertir en un pequeño editor de texto con formato (editor de contenido HTML en linea 
+                    para nuestro textarea con formato). Descargaremos elscript del head y el de página en CKeditor.com en try demos.
+                </p>
+                <p>
+                    Descripción:<br/>
+                    <textarea name="" id="description" cols="50" rows="30"></textarea>
+                    <script>
+                        ClassicEditor
+                            .create(document.querySelector('#description'))
+                            .catch(error=>{
+                                console.error(error);
+                            });
+                    </script>
+                </p>
             </article>
         </section>
 
